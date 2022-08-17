@@ -23,7 +23,7 @@ function qdn_styles() {
     wp_dequeue_style( 'wp-block-library-theme' );
     wp_dequeue_style( 'wc-block-style' ); 
 
-	wp_enqueue_style( 'base', get_stylesheet_directory_uri() . '/assets/css/main.min.css' );		
+	wp_enqueue_style( 'base', get_stylesheet_directory_uri() . '/assets/css/main.css' );
 }
 
 add_action( 'wp_enqueue_scripts', 'qdn_styles' );

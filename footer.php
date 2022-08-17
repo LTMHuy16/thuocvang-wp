@@ -171,7 +171,7 @@
 							</ul>
 						<?php endif; ?>	
 					</div>
-					<?php endif; ?>	
+				<?php endif; ?>	
 			</div>
 		</div>
     </div>
