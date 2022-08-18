@@ -8,8 +8,9 @@
     $description = get_sub_field('description');
     $main_list_text = get_sub_field('main_list_text');
     $team_quote_list = get_sub_field('team_quote_list');
+    $bg_color = get_sub_field('background_color');
 ?>
-<section class="team primary-bg section">
+<section class="team <?php if(!empty($bg_color)) {echo esc_attr($bg_color);} ?> section">
     <div class="container">
         <!-- HEADER -->
         <div class="wrapper d-flex flex-wrap align-items-end justify-content-center justify-content-sm-between">
@@ -49,22 +50,22 @@
             <!-- VIDEO LINK -->
             <?php if(!empty($video_bakground)): ?>
                 <div class="team_video col-12">
-                    <picture>
-                        <img class="team_video-thumb lazy" src="<?php echo esc_url($video_bakground['url']); ?>" alt="<?php echo esc_url($video_bakground['alt']); ?>" />
-                    </picture>
                     <?php if(!empty($video_setting)): ?>
                         <?php 
                             $video_link = $video_setting['video_link'];
+                            $play_color = $video_setting['play_color'];
                             $open_in_new_tag = $video_setting['open_in_new_tag'];
                         ?>
-                        <a class="btn-play d-inline-flex align-items-center justify-content-center"
-                            href="<?php echo esc_url($video_link); ?>">
-                            <i class="icon-play"></i>
-                            <?php 
-                                if ($open_in_new_tag) {
-                                    echo "target='_blank'";
-                                }
-                            ?>
+                        <a href="<?php echo esc_url($video_link); ?>" target="<?php if ($open_in_new_tag) {echo "_blank";}?>">
+                            <picture>
+                                <img class="team_video-thumb lazy" src="<?php echo esc_url($video_bakground['url']); ?>" alt="<?php echo esc_url($video_bakground['alt']); ?>" />
+                            </picture>
+                                <a class="btn-play d-inline-flex align-items-center justify-content-center <?php if(!empty($play_color)) {echo esc_attr($play_color);} ?>"     
+                                    href="<?php echo esc_url($video_link); ?>" 
+                                    target="<?php if ($open_in_new_tag) {echo "_blank";}?>"
+                                >
+                                    <i class="icon-play"></i>
+                                </a>
                         </a>
                     <?php endif; ?>
                 </div>
@@ -102,9 +103,9 @@
                         ?>
                         <div class="team_quote-wrapper">
                             <?php if(!empty($quote_content)): ?>
-                                <q class="team_quote-quote">
+                                <p class="team_quote-quote">
                                     <?php echo esc_html($text); ?>
-                                </q>
+                                </p>
                             <?php endif; ?>
                             <div class="team_quote-author d-flex flex-wrap flex-sm-nowrap align-items-center justify-content-end justify-content-sm-between">
                                 <div class="wrapper d-flex align-items-center">

@@ -4,8 +4,9 @@
     $custom_class = get_sub_field('custom_class');
     $list_infomation = get_sub_field('list_infomation');
     $feature_list = get_sub_field('feature_list');
+    $bg_color = get_sub_field('background');
 ?>
-<section class="features primary-bg section-nopb <?php if(!empty($custom_class)) {echo esc_attr($custom_class);} ?>">
+<section class="features <?php if($bg_color) {echo esc_attr("primary-bg");} ?> section <?php if(!empty($custom_class)) {echo esc_attr($custom_class);} ?>">
     <div class="container p-md-0">
         <div class="row g-0">
             <!-- COL INFOMATION -->
@@ -45,13 +46,13 @@
             <!-- COL FEATURES BOX -->
             <?php if(!empty($feature_list)): ?>
             <?php foreach($feature_list as $item): ?>
-                <?php 
+                <?php
                     $image = $item['image'];
                     $box_title = $item['title'];
                     $box_desc = $item['description'];
                     $box_custom_class = $item['custom_class'];
                 ?>
-                <div class="features_card col-12 col-md-6 col-xl-4 <?php if(!empty($box_custom_class)) {echo esc_attr($box_custom_class);} ?>">
+                <div class="features_card <?php if(!$bg_color) {echo esc_attr("features_card--alt");} ?> col-12 col-md-6 col-xl-4 <?php if(!empty($box_custom_class)) {echo esc_attr($box_custom_class);} ?>">
                     <div class="wrapper d-flex flex-column align-items-start justify-content-between">
                         <?php if(!empty($image)): ?>
                             <picture>

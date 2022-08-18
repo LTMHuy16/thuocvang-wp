@@ -26,6 +26,9 @@
                 case "secton_post":
                     include(get_theme_file_path('sections/posts.php'));
                     break;
+                case "image_and_text":
+                    include(get_theme_file_path('sections/image-and-text.php'));
+                    break;
                 default:
                     return;
             }

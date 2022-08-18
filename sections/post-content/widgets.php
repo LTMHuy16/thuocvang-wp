@@ -1,14 +1,4 @@
 <aside class="widgets">
-    <div id="search-2" class="widgets_widget widget_search">
-        <form class="widgets_widget--search d-flex flex-nowrap" action="https://shtheme.com/demosd/axialwp/"
-            method="POST">
-            <input class="field required" type="text" placeholder="Search" name="s" />
-            <button class="btn btn--static" type="submit">
-                <i class="icon-search"></i>
-            </button>
-        </form>
-    </div>
-
     <!-- RECENT POST -->
     <?php 
         $args = array(

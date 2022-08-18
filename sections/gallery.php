@@ -4,7 +4,7 @@
 <?php if(!empty($gallery_list)): ?>
 <section class="gallery">
     <div class="container-fluid p-0">
-        <ul class="gallery_list d-flex flex-wrap">
+        <ul class="gallery_list d-flex flex-wrap justify-content-center">
             <?php foreach($gallery_list as $item): ?>
                 <?php 
                     $image_background = $item['image_background'];

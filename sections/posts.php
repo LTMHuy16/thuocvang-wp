@@ -1,13 +1,38 @@
-<section class="blog section">
+<?php 
+    $subtitle = get_sub_field('sub_title');
+    $title = get_sub_field('title');
+    $custom_class = get_sub_field('custom_class');
+    $button = get_sub_field('button');
+?>
+<section class="blog section <?php if(!empty($custom_class)) {echo esc_attr($custom_class);} ?>">
     <div class="container">
         <div class="wrapper d-flex flex-wrap align-items-end justify-content-sm-between">
             <div class="blog_header section_header">
-                <span class="subtitle">Building The Future</span>
+                <?php if(!empty($subtitle)): ?>
+                    <span class="subtitle"><?php echo esc_html($subtitle); ?></span>
+                <?php endif; ?>
+                <?php 
+                    if($title) {
+                        $normal_title = $title['normal_title'];
+                        $highlighted_title = $title['highlighted_title'];
+                    }
+                ?>
                 <h2 class="title">
-                    Latest From the <span class="highlight">Blog</span>
+                    <?php if(!empty($normal_title)): ?>
+                        <?php echo esc_html($normal_title); ?>
+                    <?php endif; ?>
+                    <?php if(!empty($highlighted_title)): ?>
+                        <span class="highlight"><?php echo esc_html($highlighted_title); ?></span>
+                    <?php endif; ?>
                 </h2>
             </div>
-            <a class="btn blog_btn" href="https://shtheme.com/demosd/axialwp/?page_id=27">Our blog</a>
+            <?php if(!empty($button)): ?>
+                <?php 
+                    $button_text = $button['button_text'];
+                    $button_link = $button['button_link'];
+                ?>
+                <a class="btn blog_btn" href="<?php echo esc_attr($button_link) ?>"><?php echo esc_html($button_text) ?></a>
+            <?php endif; ?>
         </div>
 
 
@@ -25,30 +50,32 @@
                 <?php while( $the_query->have_posts() ) : $the_query->the_post(); ?>
                     <li class="blog_list-item col-12 col-md-6 col-lg-4">
                         <div class="wrapper d-flex flex-column justify-content-between">
-                            <div class="img-wrapper">
-                                <picture>
-                                    <?php the_post_thumbnail(); ?> 
-                                </picture>
-                            </div>
-                            <div class="text-wrapper d-flex flex-column justify-content-between">
-                                <div class="info d-flex align-items-center">
-                                    <?php the_category(); ?>
-                                    <span class="divider"></span>
-                                    <span class="date">May 24, 2022</span>
+                            <a class="link link-arrow" href="<?php the_permalink(); ?>">
+                                <div class="img-wrapper">
+                                    <picture>
+                                        <?php the_post_thumbnail(); ?> 
+                                    </picture>
                                 </div>
-                                <h4 class="title">
-                                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                                </h4>
-                                <p class="preview">
-                                    <?php the_excerpt(); ?>
-                                </p>
-                                <div class="divider--link">
-                                    <a class="link link-arrow" href="<?php the_permalink(); ?>">
-                                        Read post
-                                        <i class="icon-arrow_right"></i>
-                                    </a>
+                                <div class="text-wrapper d-flex flex-column justify-content-between">
+                                    <div class="info d-flex align-items-center">
+                                        <?php the_category(); ?>
+                                        <span class="divider"></span>
+                                        <span class="date">May 24, 2022</span>
+                                    </div>
+                                    <h4 class="title">
+                                        <?php the_title(); ?>
+                                    </h4>
+                                    <p class="preview">
+                                        <?php the_excerpt(); ?>
+                                    </p>
+                                    <div class="divider--link">
+                                        <a class="link link-arrow" href="<?php the_permalink(); ?>">
+                                            Read post
+                                            <i class="icon-arrow_right"></i>
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </li>
                 <?php endwhile; ?>
