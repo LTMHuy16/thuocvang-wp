@@ -13,6 +13,15 @@ const activeHeader = () => {
 };
 
 /**
+ * Show Navbar in Mobile
+ */
+const showMenuInMobile = () => {
+    jQuery(".hamburger").click(() => {
+        jQuery(".header_navbar-nav_list").toggleClass("active");
+    });
+};
+
+/**
  * Active ScrollToTop Button
  */
 const activeScrollToTop = () => {
@@ -40,6 +49,9 @@ const carouselServices = () => {
     });
 };
 
+/**
+ * Carousel Reviews Section
+ */
 const carouselReviews = () => {
     jQuery(".reviews_slider").owlCarousel({
         loop: true,
@@ -58,10 +70,72 @@ const carouselReviews = () => {
     });
 };
 
+/**
+ * Single Services Tabs
+ */
+const showTabs = () => {
+    const tabTitle = jQuery(".tabs_services .tabs_services-triggers_trigger");
+    const tabContents = jQuery(".tabs_services-content .content");
+
+    tabTitle.click((e) => {
+        const tabSelected = e.target;
+
+        /**
+         *  Tab:
+         *  + remove all active tab
+         *  + active current tag
+         */
+        tabTitle.removeClass("active");
+        tabSelected.classList.add("active");
+
+        /**
+         *  Content:
+         *  + remove all active content
+         *  + active current content
+         */
+        tabContents.removeClass("active");
+        const idSelectedTab = tabSelected.getAttribute("data-id");
+        const selectedContent = jQuery(
+            `.tabs_services-content .content[data-id="${idSelectedTab}"]`
+        );
+        selectedContent.addClass("active");
+    });
+};
+
+/**
+ * Toggle Accordion
+ */
+const toggleAccordion = () => {
+    const accordions = document.querySelectorAll(
+        ".faq_accordion .accordion-wrapper .faq_accordion-trigger"
+    );
+
+    accordions.forEach((accordion) => {
+        accordion.addEventListener("click", (e) => {
+            const parentEl = accordion.parentElement;
+            const content = parentEl.querySelector(".faq_accordion-content");
+            const plusIcon = accordion.querySelector(".faq_accordion-trigger_icon");
+
+            if (plusIcon.classList.contains("icon-plus")) {
+                plusIcon.classList.replace("icon-plus", "icon-minus");
+            } else {
+                plusIcon.classList.replace("icon-minus", "icon-plus");
+            }
+
+            accordion.classList.toggle("collapsed");
+            parentEl.classList.toggle("expanded");
+            content.classList.toggle("show");
+        });
+    });
+};
+
 // Run tasks
 jQuery(window).ready(() => {
     activeHeader();
+    showMenuInMobile();
     activeScrollToTop();
     carouselServices();
     carouselReviews();
+    toggleAccordion();
+    showTabs();
 });

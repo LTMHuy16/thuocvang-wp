@@ -1,4 +1,3 @@
-<?php /* Template Name: Single Post */ ?>
 <?php get_header(); ?>
 
 <div class="header_extension">

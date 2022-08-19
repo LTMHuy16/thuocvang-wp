@@ -4272,10 +4272,10 @@
     content: "\ea42";
 }
 .icon-minus:before {
-    content: "\e903";
+    content: "\ea0b";
 }
 .icon-plus:before {
-    content: "\e904";
+    content: "\ea0a";
 }
 .icon-whatsapp:before {
     content: "\ea93";
@@ -4314,7 +4314,7 @@
     content: "\e911";
 }
 .icon-inbox:before {
-    content: "\e912";
+    content: "\e945";
 }
 .icon-arrow_down:before {
     content: "\e913";
@@ -4592,6 +4592,7 @@ img {
     background: #ffc631;
 }
 .hamburger {
+    fill: #fff;
     width: 30px;
     height: 28px;
     display: inline-flex;
@@ -4898,7 +4899,7 @@ input[type="checkbox"] + label .icon {
     }
     .header_navbar-nav_list.active {
         max-height: 1000px;
-        overflow-y: unset;
+        overflow-y: hidden;
     }
     .header_extension .plan {
         bottom: -73%;
@@ -5112,7 +5113,7 @@ input[type="checkbox"] + label .icon {
 @media screen and (min-width: 991.98px) {
     .hero {
         padding-top: 150px;
-    }    
+    }
 }
 .hero_container {
     padding-bottom: 200px;
@@ -5375,6 +5376,15 @@ input[type="checkbox"] + label .icon {
 .services_list-item .wrapper:hover {
     border-color: #0da574;
 }
+.feature-wrapper {
+    padding: 0 15px;
+    margin-bottom: 20px;
+}
+.features_card--img {
+    border: 1px solid #c8c8c8;
+    padding: 51px 0;
+}
+.features_card .wrapper .number,
 .services_list-item .wrapper .number {
     color: #e9e6e6;
     font-family: Archivo, sans-serif;
@@ -5393,6 +5403,7 @@ input[type="checkbox"] + label .icon {
     .services_list-item .wrapper {
         padding: 40px;
     }
+    .features_card .wrapper .number,
     .services_list-item .wrapper .number {
         font-size: 40px;
         line-height: 50px;
@@ -5417,6 +5428,7 @@ input[type="checkbox"] + label .icon {
     .services_list-item .wrapper {
         padding: 40px;
     }
+    .features_card .wrapper .number,
     .services_list-item .wrapper .number {
         font-size: 48px;
         line-height: 55px;
@@ -5547,14 +5559,23 @@ input[type="checkbox"] + label .icon {
         margin-left: auto;
         margin-right: unset;
     }
-    .faq_header {
-        max-width: 472px;
-        margin-top: 137px;
-        margin-right: 30px;
-    }
     .faq_accordion {
         flex-shrink: 1;
         max-width: 740px;
+    }
+}
+.faq_header {
+    margin-bottom: 40px;
+}
+.accordion-trigger_icon {
+    font-size: 18px;
+    line-height: 24px;
+    display: block;
+    margin-left: 10px;
+}
+@media screen and (min-width: 1200px) {
+    .faq_header {
+        margin-bottom: 0;
     }
 }
 .faq_header .text {
@@ -5619,6 +5640,7 @@ input[type="checkbox"] + label .icon {
     fill: #001f3f;
 }
 .features_card--alt .features_card-description {
+    margin-bottom: 40px;
     color: #001f3f;
 }
 @media screen and (min-width: 767.98px) {
@@ -5973,7 +5995,6 @@ input[type="checkbox"] + label .icon {
 @media screen and (min-width: 991.98px) {
     .faq_header {
         max-width: 472px;
-        margin-right: 30px;
     }
     .faq_header .btn {
         margin: 0;
@@ -6723,9 +6744,6 @@ form .contact_form-form span.your-message textarea {
 .faq.section-nopb .faq_header .text {
     margin-top: 20px;
 }
-.faq_header {
-    margin-bottom: 50px;
-}
 .contact.section .contact_header .text,
 .process.section.primary-bg p.process_text {
     margin-top: 20px;
@@ -7195,17 +7213,21 @@ form .contact_form-form span.your-message textarea {
 @media screen and (min-width: 767.98px) {
     .widgets {
         padding: 80px 0;
+        margin: 100px auto 0;
     }
     .widgets--blog {
         padding: 80px 0 0;
     }
 }
-@media screen and (min-width: 991.98px) {
+@media screen and (min-width: 1200px) {
     .widgets {
         max-width: 380px;
+        margin: 0;
         order: unset;
         padding: 0;
     }
+}
+@media screen and (min-width: 991.98px) {
     .widgets_widget {
         padding: 40px 30px;
     }
@@ -7713,6 +7735,9 @@ form .contact_form-form span.your-message textarea {
 .blog_list-item {
     margin-top: 30px;
 }
+.bog_item {
+    margin-bottom: 40px;
+}
 .blog_list-item[data-order="1"] {
     margin-top: 0;
 }
@@ -7871,4 +7896,28 @@ form .contact_form-form span.your-message textarea {
     color: #202c38;
     font-size: 14px;
     line-height: 22px;
+}
+
+.info_data-card {
+    padding: 0 15px;
+    margin-bottom: 30px;
+}
+
+.info_data-card .wrapper {
+    border: 1px solid #c8c8c8;
+    padding: 30px;
+    transition: 0.3s ease-in-out;
+}
+
+.info_data-card:hover .wrapper {
+    border-color: #ffc631;
+}
+
+.info_data-card .icon {
+    font-size: 30px;
+    color: #ffc631;
+}
+
+.info_data-card .title {
+    margin: 15px 0 10px;
 }

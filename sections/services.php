@@ -39,6 +39,7 @@
                             $link_card = $box['link_card'];
                             $card_custom_class = $box['custom_class'];
                         }
+
                         $quantity += 1;
                         if($quantity < 10) {
                             $quantity_text = "0$quantity";

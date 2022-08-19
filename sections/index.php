@@ -35,6 +35,18 @@
                 case "section_reviews":
                     include(get_theme_file_path('sections/reviews.php'));
                     break;
+                case "section_tabs":
+                    include(get_theme_file_path('sections/tabs.php'));
+                    break;
+                case "section_faq":
+                    include(get_theme_file_path('sections/faq.php'));
+                    break;
+                case "section_process":
+                    include(get_theme_file_path('sections/process.php'));
+                    break;
+                case "section_contact_info":
+                    include(get_theme_file_path('sections/contact-infomation.php'));
+                    break;
                 default:
                     return;
             }

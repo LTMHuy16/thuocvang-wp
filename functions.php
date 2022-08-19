@@ -24,6 +24,8 @@ function qdn_styles() {
     wp_dequeue_style( 'wc-block-style' ); 
 	
 	wp_enqueue_style( 'owl-carousel', get_stylesheet_directory_uri() . '/assets/css/owl.carousel.min.css' );
+
+	wp_enqueue_style( 'single', get_stylesheet_directory_uri() . '/assets/css/single-service.css' );
 	wp_enqueue_style( 'base', get_stylesheet_directory_uri() . '/assets/css/main.css' );
 }
 
@@ -107,7 +109,8 @@ add_filter( 'acf_cf7_object', 'get_acf_cf7_object' );
 
 
 
-// POST SETTING
+//=== POST SETTING ===============
+//================================
 function excerpts_length( $length ) {
 	if ( is_admin() ) {
 		return $length;
@@ -123,3 +126,29 @@ function nelio_clickable_read_more( $more ) {
 	return "";
 }
 add_filter( 'excerpt_more', 'nelio_clickable_read_more', 99 );
+
+
+/**
+ * CREATE TAXONOMY
+ */
+function create_tagxonomy() {
+	$labels = array(
+		"name" =>  "Projects",
+		"singular" => "Projects",
+		"menu_name" => "Projects",
+	);
+
+	$args = array(
+		"labels" => $labels,
+		"hierarchical" => true,
+		"public" => true,
+		"show_ui" => true,
+		"show_admin_column" => true,
+		"show_in_nav_menus" => true,
+		"show_tagcloud" => true,
+	);
+
+	register_taxonomy("Projects", "post", $args);
+}
+
+add_action( "init", "create_tagxonomy", 0 );
