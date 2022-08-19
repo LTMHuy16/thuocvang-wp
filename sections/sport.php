@@ -66,7 +66,7 @@
                     </div>
                 <?php endif; ?>
                 <?php if(!empty($button_text) && !empty($button_link)): ?>
-                    <div class="spots_info-btn d-flex justify-content-center justify-content-xl-start">
+                    <div class="spots_info-btn d-flex justify-content-center justify-content-lg-start">
                         <a class="btn" href="<?php echo esc_url($button_link); ?>"><?php echo esc_html($button_text); ?></a>
                     </div>
                 <?php endif; ?>

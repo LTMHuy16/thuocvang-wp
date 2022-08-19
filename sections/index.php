@@ -29,6 +29,12 @@
                 case "image_and_text":
                     include(get_theme_file_path('sections/image-and-text.php'));
                     break;
+                case "section_quote":
+                    include(get_theme_file_path('sections/quote.php'));
+                    break;
+                case "section_reviews":
+                    include(get_theme_file_path('sections/reviews.php'));
+                    break;
                 default:
                     return;
             }
