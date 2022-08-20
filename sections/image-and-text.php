@@ -47,10 +47,20 @@
                         <ul class="hero_header-list">
                             <?php foreach ($list_content as $item): 
                                 $text = $item['text_content'];
+                                $is_new_icon = $item['new_icon'];
+                                $icon = $item['icon'];
                                 if (!empty($text)):
                             ?>  
                                     <li class="hero_header-list_item d-flex align-items-center">
-                                        <i class="icon-arrow_right icon"></i>
+                                        <?php if(!empty($is_new_icon == 0)): ?>
+                                            <i class="icon-arrow_right icon"></i>
+                                        <?php else: ?>
+                                            <div class="hero_header-icon">
+                                                <picture>
+                                                    <img src="<?php echo esc_url($icon['url']) ?>" alt="<?php echo esc_url($icon['alt']) ?>">
+                                                </picture>
+                                            </div>
+                                        <?php endif ?>
                                         <?php echo esc_html($text); ?>
                                     </li>
                                 <?php endif; ?>

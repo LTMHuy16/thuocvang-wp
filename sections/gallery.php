@@ -14,7 +14,7 @@
                 ?>
                 <li class="gallery_list-item col-12 col-sm-6 col-xl-3">
                     <?php if(!empty($image_background)): ?>
-                        <a class="gallery_list-item_trigger">
+                        <a href="<?php echo esc_url($image_background['url']) ?>" data-caption="<?php echo esc_attr($image_background['alt']) ?>"  class="gallery_list-item_trigger ">
                             <div class="img-wrapper">
                                 <picture>
                                     <img class="lazy" src="<?php echo esc_url($image_background['url']); ?>" alt="<?php echo esc_url($image_background['alt']); ?>" />

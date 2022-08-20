@@ -80,5 +80,10 @@
                 <?php endif; ?>	
             <?php endif; ?>
         </div>
+
+        <!-- GOOGLE MAP -->
+        <div class="info_map">
+            
+        </div>
     </div>
 </div>

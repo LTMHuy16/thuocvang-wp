@@ -32,18 +32,18 @@
     <?php if(!empty($processes)): ?>
         <div class="container-fluid process_fluid p-0">
             <div class="container">
-                <ul class="process_steps progress-tracker">
+                <ul class="process_steps progress-tracker d-flex flex-wrap mt-5">
                     <?php foreach ($processes as $item): ?>
                         <?php 
                             $process_title = $item['process_title'];
                             $process_desctiption = $item['process_desctiption'];
                         ?>
-                        <li class="process_steps-step progress-step is-complete">
+                        <li class="process_steps-step progress-step is-complete col-12 col-md-6 col-lg-3">
                             <div class="progress-marker">
                                 <span class="progress-marker_spot"></span>
                                 <span class="progress-marker_spot--underlay"></span>
                             </div>
-                            <div class="process_steps-step_wrapper">
+                            <div class="process_steps-step_wrapper mt-5">
                                 <?php if(!empty($process_title)): ?>
                                     <h4 class="title"><?php echo esc_html($process_title) ?></h4>
                                 <?php endif; ?>

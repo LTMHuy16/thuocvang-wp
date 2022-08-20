@@ -26,6 +26,7 @@ function qdn_styles() {
 	wp_enqueue_style( 'owl-carousel', get_stylesheet_directory_uri() . '/assets/css/owl.carousel.min.css' );
 
 	wp_enqueue_style( 'single', get_stylesheet_directory_uri() . '/assets/css/single-service.css' );
+	wp_enqueue_style( 'baguette-box', get_stylesheet_directory_uri() . '/assets/css/baguetteBox.min.css' );
 	wp_enqueue_style( 'base', get_stylesheet_directory_uri() . '/assets/css/main.css' );
 }
 
@@ -34,6 +35,7 @@ add_action( 'wp_enqueue_scripts', 'qdn_styles' );
 function qdn_scripts() {
 	wp_enqueue_script( 'jquery', get_stylesheet_directory_uri() . '/assets/js/jquery-3.2.1.min.js', array(), '', true);	
 	wp_enqueue_script( 'owl-carousel', get_stylesheet_directory_uri() . '/assets/js/owl.carousel.min.js' , array('jquery'), '', true);	
+	wp_enqueue_script( 'baguette-box', get_stylesheet_directory_uri() . '/assets/js/baguetteBox.min.js' , array('jquery'), '', true);	
 	wp_enqueue_script( 'main', get_stylesheet_directory_uri() . '/assets/js/main.js' , array('jquery'), '', true);	
 }
 
@@ -56,8 +58,8 @@ if( function_exists('acf_add_options_page') ) {
 
 
 	acf_add_options_page(array(
-		'page_title' 	=> 'Sections',
-		'menu_title' 	=> 'Sections',
+		'page_title' 	=> 'Infomation',
+		'menu_title' 	=> 'Infomation',
 		'redirect' 		=> false
 	));
 }

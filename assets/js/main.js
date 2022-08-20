@@ -129,6 +129,13 @@ const toggleAccordion = () => {
     });
 };
 
+/**
+ * BaguetteBox Gallery
+ */
+const activeGallery = () => {
+    baguetteBox.run('.gallery_list');
+};
+
 // Run tasks
 jQuery(window).ready(() => {
     activeHeader();
@@ -137,5 +144,6 @@ jQuery(window).ready(() => {
     carouselServices();
     carouselReviews();
     toggleAccordion();
+    activeGallery();
     showTabs();
 });

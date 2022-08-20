@@ -5136,6 +5136,10 @@ input[type="checkbox"] + label .icon {
     color: #202c38;
     margin-bottom: 15px;
 }
+.hero_header-icon {
+    max-width: 30px;
+    margin-right: 10px;
+}
 .hero_header-list_item .icon {
     color: #0da574;
     font-size: 16px;
@@ -5506,7 +5510,7 @@ input[type="checkbox"] + label .icon {
     margin-right: 10px;
 }
 .projects_list-item_info .link-arrow {
-    margin-right: auto;
+    margin-left: auto;
 }
 @media screen and (min-width: 575.98px) {
     .projects_list-item_info .location {
@@ -5526,12 +5530,9 @@ input[type="checkbox"] + label .icon {
     .projects_list-item {
         padding: 0 15px;
     }
-    .projects_list-item_info .location {
-        margin-bottom: 15px;
-    }
     .projects_list-item_info .link-arrow {
-        margin-left: unset;
-        margin-right: auto;
+        margin-left: auto;
+        margin-right: 0;
     }
 }
 @media screen and (min-width: 991.98px) {
@@ -5546,6 +5547,7 @@ input[type="checkbox"] + label .icon {
         margin-top: 50px;
     }
     .projects_list-item_info .location {
+        margin-bottom: 0;
         width: 100%;
     }
 }
@@ -6424,7 +6426,7 @@ input[type="checkbox"] + label .icon {
     position: absolute;
     font-size: 14px;
     color: #ffc631;
-    left: -15px;
+    left: -25px;
     top: 50%;
     transform: translateY(-50%);
     transition: opacity 0.3s ease-in-out;
@@ -7920,4 +7922,9 @@ form .contact_form-form span.your-message textarea {
 
 .info_data-card .title {
     margin: 15px 0 10px;
+}
+
+.info_map {
+    margin-top: 30px;
+    height: 330px;
 }

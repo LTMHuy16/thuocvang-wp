@@ -467,7 +467,7 @@
 [dir=rtl] .progress-tracker--center .progress-marker::after {
     left: -50%
 }
-
+/* 
 * {
     margin: 0;
     padding: 0;
@@ -1383,7 +1383,7 @@ input[type=checkbox]+label .icon {
     .header_navbar-nav_list .list-item {
         margin-right: 40px
     }
-}
+} */
 
 
 
