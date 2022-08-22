@@ -22,6 +22,21 @@ const showMenuInMobile = () => {
 };
 
 /**
+ * Show SubMenu in Mobile
+ */
+const showSubMenuMobile = () => {
+    const menuLinks = document.querySelectorAll(".menu-item-has-children > .dropdown-trigger");
+
+    menuLinks.forEach(el => {
+        el.addEventListener("click", () => {
+            const ulDropdown = el.parentElement.querySelector('.dropdown-content');
+
+            ulDropdown.classList.toggle('show');
+        });
+    })
+};
+
+/**
  * Active ScrollToTop Button
  */
 const activeScrollToTop = () => {
@@ -133,13 +148,14 @@ const toggleAccordion = () => {
  * BaguetteBox Gallery
  */
 const activeGallery = () => {
-    baguetteBox.run('.gallery_list');
+    baguetteBox.run(".gallery_list");
 };
 
 // Run tasks
 jQuery(window).ready(() => {
     activeHeader();
     showMenuInMobile();
+    showSubMenuMobile();
     activeScrollToTop();
     carouselServices();
     carouselReviews();

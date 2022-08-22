@@ -1,10 +1,11 @@
 <?php 
     $gallery_list = get_sub_field('gallery_list');
+    $is_in_container = get_sub_field('gallery_in_container');
 ?>
 <?php if(!empty($gallery_list)): ?>
-<section class="gallery">
-    <div class="container-fluid p-0">
-        <ul class="gallery_list d-flex flex-wrap justify-content-center">
+<section class="gallery <?php if($is_in_container) {echo esc_attr('gallery--my');} ?>">
+    <div class="container<?php if($is_in_container == 0) {echo esc_attr('-fluid');} ?> p-0">
+        <ul class="gallery_list <?php if($is_in_container) {echo esc_attr('gallery__inner');} ?> d-flex flex-wrap justify-content-center">
             <?php foreach($gallery_list as $item): ?>
                 <?php 
                     $image_background = $item['image_background'];
@@ -12,7 +13,7 @@
                     $title = $item['title'];
                     $label = $item['label'];
                 ?>
-                <li class="gallery_list-item col-12 col-sm-6 col-xl-3">
+                <li class="gallery_list-item <?php if($is_in_container) {echo esc_attr('gallery_list-item--pad');} ?> col-12 col-sm-6 <?php if($is_in_container == 0) {echo esc_attr('col-xl-3');} else {echo esc_attr("col-xl-4");} ?> ">
                     <?php if(!empty($image_background)): ?>
                         <a href="<?php echo esc_url($image_background['url']) ?>" data-caption="<?php echo esc_attr($image_background['alt']) ?>"  class="gallery_list-item_trigger ">
                             <div class="img-wrapper">

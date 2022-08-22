@@ -16,6 +16,7 @@
                     if($title) {
                         $normal_title = $title['normal_title'];
                         $highlighted_title = $title['highlighted_title'];
+                        $normal_title_after = $title['normal_title_after'];
                     }
                 ?>
                 <h2 class="title">
@@ -24,6 +25,9 @@
                     <?php endif; ?>
                     <?php if(!empty($highlighted_title)): ?>
                         <span class="highlight"><?php echo esc_html($highlighted_title); ?></span>
+                    <?php endif; ?>
+                    <?php if(!empty($normal_title_after)): ?>
+                        <?php echo esc_html($normal_title_after); ?>
                     <?php endif; ?>
                 </h2>
             </div>
