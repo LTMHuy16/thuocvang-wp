@@ -71,7 +71,12 @@ const carouselReviews = () => {
     jQuery(".reviews_slider").owlCarousel({
         loop: true,
         items: 2,
-        navs: true,
+        nav: true,
+        navText: [
+            '<div class="tns-arrows_arrow tns-arrows_arrow--prev"><i class="icon-arrow_left icon"></i></div>', 
+            '<div class="tns-arrows_arrow tns-arrows_arrow--next"><i class="icon-arrow_right icon"></i></div>'
+        ],
+        navContainerClass: 'reviews_slider-controls',
         responsive: {
             0: {
                 items: 1,

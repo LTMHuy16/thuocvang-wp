@@ -14,9 +14,14 @@
             array_push($terms, $slug->slug);
         }
 
+        $max_post = get_option( "posts_per_page");
+        if (!empty($max_post)) {
+            $max_post = 6;
+        }
+
         // create WP_query
         $args = array(
-            'posts_per_page'    => 1,
+            'posts_per_page'    => $max_post,
             'post_type'         => 'post',
             "paged"             => 1,
             'post_status'       => 'publish',

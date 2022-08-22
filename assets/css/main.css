@@ -4713,13 +4713,6 @@ input[type="checkbox"] + label .icon {
     }
 }
 
-.header_extension {
-    padding: 50px 0;
-    position: relative;
-    background-color: #001f3f;
-    color: #fff;
-}
-
 @media screen and (min-width: 991.98px) {
     h1 {
         font-size: 58px;
@@ -4849,7 +4842,11 @@ input[type="checkbox"] + label .icon {
     margin: 0 10px;
 }
 .header_extension {
-    padding: 100px 0 40px;
+    padding: 50px 0;
+    position: relative;
+    overflow: hidden;
+    background-color: #001f3f;
+    color: #fff;
 }
 .header_extension .section_header {
     position: relative;
@@ -4857,7 +4854,8 @@ input[type="checkbox"] + label .icon {
 }
 .header_extension .plan {
     position: absolute;
-    width: 50%;
+    max-width: 50%;
+    width: auto;
     transform: rotate(153deg);
     bottom: -22%;
     right: 10%;
@@ -4920,6 +4918,9 @@ input[type="checkbox"] + label .icon {
     .header_extension .plan {
         bottom: -73%;
     }
+}
+.header .brand {
+    max-width: 300px;
 }
 @media screen and (min-width: 991.98px) {
     .header .brand {
@@ -5242,9 +5243,11 @@ input[type="checkbox"] + label .icon {
 }
 .hero_info-card .hero_building--mini {
     position: absolute;
+    z-index: -1;
     transform: rotate(2deg);
     right: -14%;
     top: 30%;
+    width: auto;
     max-height: 80%;
 }
 .hero_info-card .info,
@@ -5276,6 +5279,7 @@ input[type="checkbox"] + label .icon {
         opacity: 0.5;
         transform: rotate(154deg);
         max-width: 50%;
+        width: auto;
         bottom: -10%;
         left: -10%;
     }
@@ -5993,7 +5997,7 @@ input[type="checkbox"] + label .icon {
     }
     .quote_header-icon {
         top: -66px;
-        left: 0;
+        left: -80px;
     }
 }
 @media screen and (min-width: 1199.98px) {
@@ -7017,6 +7021,9 @@ form .contact_form-form span.your-message textarea {
 .widgets_widget--search .field:focus::placeholder {
     opacity: 0;
 }
+.widgets_widget .field {
+    border: 1px solid #e9e6e6;
+}
 .widgets_widget--latest .list .list-item {
     padding-bottom: 15px;
     font-size: 18px;
@@ -7941,14 +7948,42 @@ form .contact_form-form span.your-message textarea {
     font-size: 14px;
     line-height: 22px;
 }
-
+.tns-arrows_arrow--prev {
+    margin-right: 30px;
+}
+.tns-arrows_arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #001f3f;
+    font-size: 16px;
+    border-radius: 50%;
+    transition: 0.3s ease-in-out;
+}
+.reviews_slider-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+@media screen and (min-width: 767.98px) {
+    .reviews_slider-controls {
+        margin-top: 0;
+        justify-content: flex-end;
+        position: absolute;
+        right: 0;
+        top: -50px;
+    }
+}
 
 .progress-tracker {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     padding: 0;
-    list-style: none
+    list-style: none;
 }
 
 .progress-step {
@@ -7957,22 +7992,22 @@ form .contact_form-form span.your-message textarea {
     flex: 1 1 0%;
     margin: 0;
     padding: 0;
-    min-width: 24px
+    min-width: 24px;
 }
 
 .progress-step:last-child {
     -webkit-box-flex: 0;
     -ms-flex-positive: 0;
-    flex-grow: 0
+    flex-grow: 0;
 }
 
 .progress-step:last-child .progress-marker::after {
-    display: none
+    display: none;
 }
 
 .progress-marker {
     display: block;
-    position: relative
+    position: relative;
 }
 
 .progress-marker_spot {
@@ -7984,7 +8019,7 @@ form .contact_form-form span.your-message textarea {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 3
+    z-index: 3;
 }
 
 .progress-marker_spot--underlay {
@@ -7992,21 +8027,21 @@ form .contact_form-form span.your-message textarea {
     width: 0;
     height: 0;
     border-radius: 50%;
-    background-color: rgba(255,198,49,.3);
+    background-color: rgba(255, 198, 49, 0.3);
     top: -10px;
     left: -10px;
     z-index: 2;
-    transition: ease-in-out
+    transition: ease-in-out;
 }
 
 .progress-step.is-complete .progress-marker_spot--underlay {
     animation: 4.5s infinite pulse;
     width: 40px;
-    height: 40px
+    height: 40px;
 }
 
 .progress-marker::after {
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     z-index: 1;
@@ -8014,205 +8049,276 @@ form .contact_form-form span.your-message textarea {
     right: -10px;
     width: 100%;
     height: 1px;
-    -webkit-transition: background-color .6s,background-position .6s;
-    transition: background-color .6s,background-position .6s
+    -webkit-transition: background-color 0.6s, background-position 0.6s;
+    transition: background-color 0.6s, background-position 0.6s;
 }
 
 .progress-step .progress-marker {
-    color: #a9a9a9
+    color: #a9a9a9;
 }
 
-.progress-step .progress-marker::after,.progress-step .progress-marker::before {
-    background-color: #b6b6b6
+.progress-step .progress-marker::after,
+.progress-step .progress-marker::before {
+    background-color: #b6b6b6;
 }
 
 .progress-step .progress-text {
-    color: #333
+    color: #333;
 }
 
-.progress-step.is-active .progress-marker::before,.progress-step.is-complete .progress-marker::after,.progress-step.is-complete .progress-marker::before,.progress-step.is-progress .progress-marker::after,.progress-step.is-progress .progress-marker::before {
-    background-color: #ffc631
+.progress-step.is-active .progress-marker::before,
+.progress-step.is-complete .progress-marker::after,
+.progress-step.is-complete .progress-marker::before,
+.progress-step.is-progress .progress-marker::after,
+.progress-step.is-progress .progress-marker::before {
+    background-color: #ffc631;
 }
 
 .progress-step.is-progress-10 .progress-marker::after {
-    background-image: -webkit-gradient(linear,left top,right top,color-stop(10%,#868686),color-stop(10%,#b6b6b6));
-    background-image: linear-gradient(to right,#868686 10%,#b6b6b6 10%)
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        right top,
+        color-stop(10%, #868686),
+        color-stop(10%, #b6b6b6)
+    );
+    background-image: linear-gradient(to right, #868686 10%, #b6b6b6 10%);
 }
 
 .progress-step.is-progress-20 .progress-marker::after {
-    background-image: -webkit-gradient(linear,left top,right top,color-stop(20%,#868686),color-stop(20%,#b6b6b6));
-    background-image: linear-gradient(to right,#868686 20%,#b6b6b6 20%)
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        right top,
+        color-stop(20%, #868686),
+        color-stop(20%, #b6b6b6)
+    );
+    background-image: linear-gradient(to right, #868686 20%, #b6b6b6 20%);
 }
 
 .progress-step.is-progress-30 .progress-marker::after {
-    background-image: -webkit-gradient(linear,left top,right top,color-stop(30%,#868686),color-stop(30%,#b6b6b6));
-    background-image: linear-gradient(to right,#868686 30%,#b6b6b6 30%)
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        right top,
+        color-stop(30%, #868686),
+        color-stop(30%, #b6b6b6)
+    );
+    background-image: linear-gradient(to right, #868686 30%, #b6b6b6 30%);
 }
 
 .progress-step.is-progress-40 .progress-marker::after {
-    background-image: -webkit-gradient(linear,left top,right top,color-stop(40%,#868686),color-stop(40%,#b6b6b6));
-    background-image: linear-gradient(to right,#868686 40%,#b6b6b6 40%)
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        right top,
+        color-stop(40%, #868686),
+        color-stop(40%, #b6b6b6)
+    );
+    background-image: linear-gradient(to right, #868686 40%, #b6b6b6 40%);
 }
 
 .progress-step.is-progress-50 .progress-marker::after {
-    background-image: -webkit-gradient(linear,left top,right top,color-stop(50%,#868686),color-stop(50%,#b6b6b6));
-    background-image: linear-gradient(to right,#868686 50%,#b6b6b6 50%)
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        right top,
+        color-stop(50%, #868686),
+        color-stop(50%, #b6b6b6)
+    );
+    background-image: linear-gradient(to right, #868686 50%, #b6b6b6 50%);
 }
 
 .progress-step.is-progress-60 .progress-marker::after {
-    background-image: -webkit-gradient(linear,left top,right top,color-stop(60%,#868686),color-stop(60%,#b6b6b6));
-    background-image: linear-gradient(to right,#868686 60%,#b6b6b6 60%)
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        right top,
+        color-stop(60%, #868686),
+        color-stop(60%, #b6b6b6)
+    );
+    background-image: linear-gradient(to right, #868686 60%, #b6b6b6 60%);
 }
 
 .progress-step.is-progress-70 .progress-marker::after {
-    background-image: -webkit-gradient(linear,left top,right top,color-stop(70%,#868686),color-stop(70%,#b6b6b6));
-    background-image: linear-gradient(to right,#868686 70%,#b6b6b6 70%)
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        right top,
+        color-stop(70%, #868686),
+        color-stop(70%, #b6b6b6)
+    );
+    background-image: linear-gradient(to right, #868686 70%, #b6b6b6 70%);
 }
 
 .progress-step.is-progress-80 .progress-marker::after {
-    background-image: -webkit-gradient(linear,left top,right top,color-stop(80%,#868686),color-stop(80%,#b6b6b6));
-    background-image: linear-gradient(to right,#868686 80%,#b6b6b6 80%)
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        right top,
+        color-stop(80%, #868686),
+        color-stop(80%, #b6b6b6)
+    );
+    background-image: linear-gradient(to right, #868686 80%, #b6b6b6 80%);
 }
 
 .progress-step.is-progress-90 .progress-marker::after {
-    background-image: -webkit-gradient(linear,left top,right top,color-stop(90%,#868686),color-stop(90%,#b6b6b6));
-    background-image: linear-gradient(to right,#868686 90%,#b6b6b6 90%)
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        right top,
+        color-stop(90%, #868686),
+        color-stop(90%, #b6b6b6)
+    );
+    background-image: linear-gradient(to right, #868686 90%, #b6b6b6 90%);
 }
 
 .progress-step:hover .progress-marker::before {
-    background-color: #56adf5
+    background-color: #56adf5;
 }
 
-.progress-tracker--center .progress-step:last-child,.progress-tracker--right .progress-step:last-child,.progress-tracker--text .progress-step:last-child {
+.progress-tracker--center .progress-step:last-child,
+.progress-tracker--right .progress-step:last-child,
+.progress-tracker--text .progress-step:last-child {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
-    flex-grow: 1
+    flex-grow: 1;
 }
 
 .progress-tracker--center {
-    text-align: center
+    text-align: center;
 }
 
-.progress-tracker--center .progress-marker::before,.progress-tracker--center .progress-text--dotted::before {
+.progress-tracker--center .progress-marker::before,
+.progress-tracker--center .progress-text--dotted::before {
     margin-left: auto;
-    margin-right: auto
+    margin-right: auto;
 }
 
 .progress-tracker--center .progress-marker::after {
-    right: -50%
+    right: -50%;
 }
 
 .progress-tracker--right {
-    text-align: right
+    text-align: right;
 }
 
-.progress-tracker--right .progress-marker::before,.progress-tracker--right .progress-text--dotted::before {
-    margin-left: auto
+.progress-tracker--right .progress-marker::before,
+.progress-tracker--right .progress-text--dotted::before {
+    margin-left: auto;
 }
 
 .progress-tracker--right .progress-marker::after {
-    right: calc(-100% + 12px)
+    right: calc(-100% + 12px);
 }
 
 .progress-tracker--spaced .progress-marker::after {
     width: calc(100% - 40px);
     margin-left: 20px;
-    margin-right: 20px
+    margin-right: 20px;
 }
 
 .progress-tracker--border {
     padding: 4px;
     border: 2px solid #333;
-    border-radius: 32px
+    border-radius: 32px;
 }
 
 .progress-text--dotted::before {
-    content: '';
+    content: "";
     display: block;
     width: 12px;
     height: 12px;
     margin: 6px -2px;
     background-size: 12px 18px;
-    background-image: repeating-radial-gradient(circle at center 6px,#b6b6b6,#b6b6b6 5px,rgba(182,182,182,.5) 5.5px,rgba(182,182,182,.01) 6px,transparent 100%)
+    background-image: repeating-radial-gradient(
+        circle at center 6px,
+        #b6b6b6,
+        #b6b6b6 5px,
+        rgba(182, 182, 182, 0.5) 5.5px,
+        rgba(182, 182, 182, 0.01) 6px,
+        transparent 100%
+    );
 }
 
 .progress-text--dotted-1::before {
-    height: 12px
+    height: 12px;
 }
 
 .progress-text--dotted-2::before {
-    height: 30px
+    height: 30px;
 }
 
 .progress-text--dotted-3::before {
-    height: 48px
+    height: 48px;
 }
 
 .progress-text--dotted-4::before {
-    height: 66px
+    height: 66px;
 }
 
 .progress-text--dotted-5::before {
-    height: 84px
+    height: 84px;
 }
 
 .progress-text--dotted-6::before {
-    height: 102px
+    height: 102px;
 }
 
 .progress-text--dotted-7::before {
-    height: 120px
+    height: 120px;
 }
 
 .progress-text--dotted-8::before {
-    height: 138px
+    height: 138px;
 }
 
 .progress-text--dotted-9::before {
-    height: 156px
+    height: 156px;
 }
 
 .progress-text--dotted-10::before {
-    height: 174px
+    height: 174px;
 }
 
 .progress-text--dotted-11::before {
-    height: 192px
+    height: 192px;
 }
 
 .progress-text--dotted-12::before {
-    height: 210px
+    height: 210px;
 }
 
 .progress-tracker--text-top .progress-text {
-    height: 100%
+    height: 100%;
 }
 
 .progress-tracker--text-top .progress-marker {
-    top: -24px
+    top: -24px;
 }
 
 .progress-tracker--text-inline {
-    overflow: hidden
+    overflow: hidden;
 }
 
-.progress-tracker--text-inline .progress-marker,.progress-tracker--text-inline .progress-step {
+.progress-tracker--text-inline .progress-marker,
+.progress-tracker--text-inline .progress-step {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
     -ms-flex-align: center;
-    align-items: center
+    align-items: center;
 }
 
 .progress-tracker--text-inline .progress-marker {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
-    flex-grow: 1
+    flex-grow: 1;
 }
 
 .progress-tracker--text-inline .progress-marker::after {
-    top: auto
+    top: auto;
 }
 
 .progress-tracker--text-inline .progress-text {
@@ -8222,36 +8328,36 @@ form .contact_form-form span.your-message textarea {
     white-space: nowrap;
     padding-top: 0;
     padding-bottom: 0;
-    background-color: #fff
+    background-color: #fff;
 }
 
 .progress-tracker--text-inline .progress-marker .progress-text {
-    display: inline-block
+    display: inline-block;
 }
 
 .progress-tracker--text-inline .progress-title {
-    margin: 0
+    margin: 0;
 }
 
 .progress-tracker--square .progress-marker::before {
-    border-radius: 0
+    border-radius: 0;
 }
 
 .progress-tracker--square .progress-marker::after {
     top: auto;
-    bottom: 0
+    bottom: 0;
 }
 
-@media (max-width:575px) {
+@media (max-width: 575px) {
     .progress-tracker-wrapper {
         overflow-x: auto;
         -ms-scroll-snap-type: x proximity;
-        scroll-snap-type: x proximity
+        scroll-snap-type: x proximity;
     }
 
     .progress-tracker-wrapper .progress-step {
         min-width: 50%;
-        scroll-snap-align: start
+        scroll-snap-align: start;
     }
 }
 
@@ -8259,7 +8365,7 @@ form .contact_form-form span.your-message textarea {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
-    flex-direction: column
+    flex-direction: column;
 }
 
 .progress-tracker--vertical .progress-step {
@@ -8268,14 +8374,14 @@ form .contact_form-form span.your-message textarea {
     display: flex;
     -webkit-box-flex: 1;
     -ms-flex: 1 1 auto;
-    flex: 1 1 auto
+    flex: 1 1 auto;
 }
 
 .progress-tracker--vertical.progress-tracker--right .progress-step {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
     -ms-flex-direction: row-reverse;
-    flex-direction: row-reverse
+    flex-direction: row-reverse;
 }
 
 .progress-tracker--vertical .progress-marker::after {
@@ -8283,42 +8389,44 @@ form .contact_form-form span.your-message textarea {
     top: 0;
     left: 10px;
     width: 1px;
-    height: 100%
+    height: 100%;
 }
 
 .progress-tracker--vertical .progress-text {
-    padding: 0 12px 24px
+    padding: 0 12px 24px;
 }
 
 @-webkit-keyframes scale-up {
     from {
         opacity: 1;
-        -webkit-transform: translate(-50%,-50%) scale(0);
-        transform: translate(-50%,-50%) scale(0)
+        -webkit-transform: translate(-50%, -50%) scale(0);
+        transform: translate(-50%, -50%) scale(0);
     }
 
     to {
         opacity: 0;
-        -webkit-transform: translate(-50%,-50%) scale(1);
-        transform: translate(-50%,-50%) scale(1)
+        -webkit-transform: translate(-50%, -50%) scale(1);
+        transform: translate(-50%, -50%) scale(1);
     }
 }
 
 @keyframes scale-up {
     from {
         opacity: 1;
-        -webkit-transform: translate(-50%,-50%) scale(0);
-        transform: translate(-50%,-50%) scale(0)
+        -webkit-transform: translate(-50%, -50%) scale(0);
+        transform: translate(-50%, -50%) scale(0);
     }
 
     to {
         opacity: 0;
-        -webkit-transform: translate(-50%,-50%) scale(1);
-        transform: translate(-50%,-50%) scale(1)
+        -webkit-transform: translate(-50%, -50%) scale(1);
+        transform: translate(-50%, -50%) scale(1);
     }
 }
 
-.anim-ripple .progress-link::before,.anim-ripple-large .progress-link::before,.anim-ripple-splash .progress-link::before {
+.anim-ripple .progress-link::before,
+.anim-ripple-large .progress-link::before,
+.anim-ripple-splash .progress-link::before {
     content: "";
     display: block;
     width: 24px;
@@ -8327,35 +8435,68 @@ form .contact_form-form span.your-message textarea {
     top: 12px;
     left: 12px;
     z-index: 30;
-    background: rgba(0,0,0,.3);
+    background: rgba(0, 0, 0, 0.3);
     border-radius: 50%;
-    -webkit-transform: translate(-50%,-50%) scale(0);
-    transform: translate(-50%,-50%) scale(0);
+    -webkit-transform: translate(-50%, -50%) scale(0);
+    transform: translate(-50%, -50%) scale(0);
     visibility: hidden;
-    -webkit-animation: .3s ease-out scale-up;
-    animation: .3s ease-out scale-up
+    -webkit-animation: 0.3s ease-out scale-up;
+    animation: 0.3s ease-out scale-up;
 }
 
-.anim-ripple .progress-link:focus::before,.anim-ripple-large .progress-link:focus::before,.anim-ripple-splash .progress-link:focus::before {
-    visibility: visible
+.anim-ripple .progress-link:focus::before,
+.anim-ripple-large .progress-link:focus::before,
+.anim-ripple-splash .progress-link:focus::before {
+    visibility: visible;
 }
 
-.anim-ripple-double.progress-tracker--center .progress-link::after,.anim-ripple-double.progress-tracker--center .progress-link::before,.anim-ripple-large.progress-tracker--center .progress-link::after,.anim-ripple-large.progress-tracker--center .progress-link::before,.anim-ripple-splash.progress-tracker--center .progress-link::after,.anim-ripple-splash.progress-tracker--center .progress-link::before,.anim-ripple.progress-tracker--center .progress-link::after,.anim-ripple.progress-tracker--center .progress-link::before,.progress-tracker--center .anim-ripple .progress-link::after,.progress-tracker--center .anim-ripple .progress-link::before,.progress-tracker--center .anim-ripple-double .progress-link::after,.progress-tracker--center .anim-ripple-double .progress-link::before,.progress-tracker--center .anim-ripple-large .progress-link::after,.progress-tracker--center .anim-ripple-large .progress-link::before,.progress-tracker--center .anim-ripple-splash .progress-link::after,.progress-tracker--center .anim-ripple-splash .progress-link::before {
-    left: 50%
+.anim-ripple-double.progress-tracker--center .progress-link::after,
+.anim-ripple-double.progress-tracker--center .progress-link::before,
+.anim-ripple-large.progress-tracker--center .progress-link::after,
+.anim-ripple-large.progress-tracker--center .progress-link::before,
+.anim-ripple-splash.progress-tracker--center .progress-link::after,
+.anim-ripple-splash.progress-tracker--center .progress-link::before,
+.anim-ripple.progress-tracker--center .progress-link::after,
+.anim-ripple.progress-tracker--center .progress-link::before,
+.progress-tracker--center .anim-ripple .progress-link::after,
+.progress-tracker--center .anim-ripple .progress-link::before,
+.progress-tracker--center .anim-ripple-double .progress-link::after,
+.progress-tracker--center .anim-ripple-double .progress-link::before,
+.progress-tracker--center .anim-ripple-large .progress-link::after,
+.progress-tracker--center .anim-ripple-large .progress-link::before,
+.progress-tracker--center .anim-ripple-splash .progress-link::after,
+.progress-tracker--center .anim-ripple-splash .progress-link::before {
+    left: 50%;
 }
 
-.anim-ripple-double.progress-tracker--right .progress-link::after,.anim-ripple-double.progress-tracker--right .progress-link::before,.anim-ripple-large.progress-tracker--right .progress-link::after,.anim-ripple-large.progress-tracker--right .progress-link::before,.anim-ripple-splash.progress-tracker--right .progress-link::after,.anim-ripple-splash.progress-tracker--right .progress-link::before,.anim-ripple.progress-tracker--right .progress-link::after,.anim-ripple.progress-tracker--right .progress-link::before,.progress-tracker--right .anim-ripple .progress-link::after,.progress-tracker--right .anim-ripple .progress-link::before,.progress-tracker--right .anim-ripple-double .progress-link::after,.progress-tracker--right .anim-ripple-double .progress-link::before,.progress-tracker--right .anim-ripple-large .progress-link::after,.progress-tracker--right .anim-ripple-large .progress-link::before,.progress-tracker--right .anim-ripple-splash .progress-link::after,.progress-tracker--right .anim-ripple-splash .progress-link::before {
-    left: calc(100% - 12px)
+.anim-ripple-double.progress-tracker--right .progress-link::after,
+.anim-ripple-double.progress-tracker--right .progress-link::before,
+.anim-ripple-large.progress-tracker--right .progress-link::after,
+.anim-ripple-large.progress-tracker--right .progress-link::before,
+.anim-ripple-splash.progress-tracker--right .progress-link::after,
+.anim-ripple-splash.progress-tracker--right .progress-link::before,
+.anim-ripple.progress-tracker--right .progress-link::after,
+.anim-ripple.progress-tracker--right .progress-link::before,
+.progress-tracker--right .anim-ripple .progress-link::after,
+.progress-tracker--right .anim-ripple .progress-link::before,
+.progress-tracker--right .anim-ripple-double .progress-link::after,
+.progress-tracker--right .anim-ripple-double .progress-link::before,
+.progress-tracker--right .anim-ripple-large .progress-link::after,
+.progress-tracker--right .anim-ripple-large .progress-link::before,
+.progress-tracker--right .anim-ripple-splash .progress-link::after,
+.progress-tracker--right .anim-ripple-splash .progress-link::before {
+    left: calc(100% - 12px);
 }
 
 .anim-ripple-splash .progress-link::before {
     width: 48px;
     height: 48px;
-    -webkit-box-shadow: 0 0 6px 6px rgba(0,0,0,.35);
-    box-shadow: 0 0 6px 6px rgba(0,0,0,.35)
+    -webkit-box-shadow: 0 0 6px 6px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 0 6px 6px rgba(0, 0, 0, 0.35);
 }
 
-.anim-ripple-double .progress-link::after,.anim-ripple-double .progress-link::before {
+.anim-ripple-double .progress-link::after,
+.anim-ripple-double .progress-link::before {
     content: "";
     display: block;
     width: 24px;
@@ -8366,68 +8507,78 @@ form .contact_form-form span.your-message textarea {
     z-index: 30;
     background: 0 0;
     border-radius: 50%;
-    -webkit-transform: translate(-50%,-50%) scale(0);
-    transform: translate(-50%,-50%) scale(0);
+    -webkit-transform: translate(-50%, -50%) scale(0);
+    transform: translate(-50%, -50%) scale(0);
     visibility: hidden;
-    border: 3px solid rgba(0,0,0,.3)
+    border: 3px solid rgba(0, 0, 0, 0.3);
 }
 
-.anim-ripple-double .progress-link:not(:active)::after,.anim-ripple-double .progress-link:not(:active)::before {
-    -webkit-animation: .3s ease-out scale-up;
-    animation: .3s ease-out scale-up
+.anim-ripple-double .progress-link:not(:active)::after,
+.anim-ripple-double .progress-link:not(:active)::before {
+    -webkit-animation: 0.3s ease-out scale-up;
+    animation: 0.3s ease-out scale-up;
 }
 
 .anim-ripple-double .progress-link:not(:active)::after {
-    -webkit-animation-delay: .15s;
-    animation-delay: .15s
+    -webkit-animation-delay: 0.15s;
+    animation-delay: 0.15s;
 }
 
-.anim-ripple-double .progress-link:focus::after,.anim-ripple-double .progress-link:focus::before {
-    visibility: visible
+.anim-ripple-double .progress-link:focus::after,
+.anim-ripple-double .progress-link:focus::before {
+    visibility: visible;
 }
 
-.anim--large .progress-link::after,.anim--large .progress-link::before {
+.anim--large .progress-link::after,
+.anim--large .progress-link::before {
     width: 48px;
-    height: 48px
+    height: 48px;
 }
 
 .anim--path .progress-marker::after {
-    background-image: -webkit-gradient(linear,left top,right top,color-stop(50%,#b6b6b6),color-stop(50%,#868686));
-    background-image: linear-gradient(to right,#b6b6b6 50%,#868686 50%);
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        right top,
+        color-stop(50%, #b6b6b6),
+        color-stop(50%, #868686)
+    );
+    background-image: linear-gradient(to right, #b6b6b6 50%, #868686 50%);
     background-size: 200% 100%;
     background-position: 0 100%;
-    -webkit-transition: background-position .3s ease-out;
-    transition: background-position .3s ease-out
+    -webkit-transition: background-position 0.3s ease-out;
+    transition: background-position 0.3s ease-out;
 }
 
-.anim--path .progress-step.is-complete .progress-marker::after,.progress-step.is-complete .anim--path .progress-marker::after {
-    background-position: -100% 100%
+.anim--path .progress-step.is-complete .progress-marker::after,
+.progress-step.is-complete .anim--path .progress-marker::after {
+    background-position: -100% 100%;
 }
 
-[dir=rtl] .progress-marker::after {
+[dir="rtl"] .progress-marker::after {
     right: auto;
-    left: -12px
+    left: -12px;
 }
 
-[dir=rtl] .progress-tracker--center .progress-marker::after {
-    left: -50%
+[dir="rtl"] .progress-tracker--center .progress-marker::after {
+    left: -50%;
 }
 
 /* TAG */
 .tabs_header {
-    margin-bottom: 40px
+    margin-bottom: 40px;
 }
 
 .tabs_services-triggers_trigger {
     cursor: pointer;
     text-align: left;
-    font-family: Archivo,sans-serif;
+    font-family: Archivo, sans-serif;
     font-weight: 500;
     font-size: 16px;
     border: 1px solid #c8c8c8;
     position: relative;
     width: 100%;
-    padding: 15px 25px
+    padding: 15px 25px;
 }
 
 .tabs_services-triggers_trigger:not(:first-child) {
@@ -8435,27 +8586,27 @@ form .contact_form-form span.your-message textarea {
 }
 
 .tabs_services-triggers_trigger:before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     top: 0;
     height: 100%;
     width: 1px;
     background: #c8c8c8;
-    -webkit-transition: .3s ease-in-out;
-    -o-transition: .3s ease-in-out;
-    transition: .3s ease-in-out
+    -webkit-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
 }
 
 .tabs_services-triggers_trigger.active:before {
     width: 4px;
-    background: #0da574
+    background: #0da574;
 }
 
 .tabs_services-content {
     overflow: hidden;
     border: 1px solid #c8c8c8;
-    border-top: none
+    border-top: none;
 }
 
 .tabs_services-content .content {
@@ -8474,116 +8625,117 @@ form .contact_form-form span.your-message textarea {
     max-width: 100%;
 }
 
-.tabs_services-content .content.active .img-wrapper,.tabs_services-content .content.active .text-wrapper {
-    opacity: 1
+.tabs_services-content .content.active .img-wrapper,
+.tabs_services-content .content.active .text-wrapper {
+    opacity: 1;
 }
 
 .tabs_services-content .content .img-wrapper {
     opacity: 0;
-    -webkit-transition: opacity .5s ease-in-out;
-    -o-transition: opacity .5s ease-in-out;
-    transition: opacity .5s ease-in-out;
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -o-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
     max-height: 370px;
-    overflow: hidden
+    overflow: hidden;
 }
 
 .tabs_services-content .content .img-wrapper img {
     display: block;
     width: 100%;
     -o-object-fit: cover;
-    object-fit: cover
+    object-fit: cover;
 }
 
 .tabs_services-content .content .text-wrapper {
     opacity: 0;
-    -webkit-transition: opacity .5s ease-in-out;
-    -o-transition: opacity .5s ease-in-out;
-    transition: opacity .5s ease-in-out;
-    padding: 15px
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -o-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+    padding: 15px;
 }
 
 .tabs_services-content .content .text-wrapper .main {
     -webkit-box-ordinal-group: 3;
     -ms-flex-order: 2;
     order: 2;
-    margin-top: 30px
+    margin-top: 30px;
 }
 
 .tabs_services-content .content .text-wrapper .main_table {
-    width: 100%
+    width: 100%;
 }
 
 .tabs_services-content .content .text-wrapper .main_table .property {
-    color: #162739
+    color: #162739;
 }
 
 .tabs_services-content .content .text-wrapper .main_table .value {
     text-transform: uppercase;
-    font-family: Archivo,sans-serif;
+    font-family: Archivo, sans-serif;
     font-weight: 600;
     font-size: 18px;
     line-height: 23px;
-    text-align: right
+    text-align: right;
 }
 
 .tabs_services-content .content .text-wrapper .main_btn {
     width: 100%;
     padding: 10px 30px;
-    margin: 20px 0 0
+    margin: 20px 0 0;
 }
 
 .tabs_services-content .content .text-wrapper .description .text {
     color: #202c38;
-    margin-bottom: 20px
+    margin-bottom: 20px;
 }
 
 .tabs_services-content .content .text-wrapper .description .text:last-of-type {
-    margin-bottom: 0
+    margin-bottom: 0;
 }
 
-@media screen and (min-width:575.98px) {
+@media screen and (min-width: 575.98px) {
     .tabs_services-content .content .text-wrapper {
-        padding: 30px
+        padding: 30px;
     }
 
     .tabs_services-content .content .text-wrapper .main {
         margin: 0 0 20px;
         -webkit-box-ordinal-group: unset;
         -ms-flex-order: unset;
-        order: unset
+        order: unset;
     }
 
     .tabs_services-content .content .text-wrapper .main_table {
         width: unset;
-        border-spacing: 0 5px
+        border-spacing: 0 5px;
     }
 
     .tabs_services-content .content .text-wrapper .main_table .value {
-        text-align: left
+        text-align: left;
     }
 
     .tabs_services-content .content .text-wrapper .main_table .property {
-        padding-right: 25px
+        padding-right: 25px;
     }
 
     .tabs_services-content .content .text-wrapper .main_btn {
         width: unset;
         padding: 18px 30px;
-        margin: 0
+        margin: 0;
     }
 
     .tabs_services-content .content .text-wrapper .description .text {
         color: #202c38;
-        margin-bottom: 20px
+        margin-bottom: 20px;
     }
 }
 
-@media screen and (min-width:767.98px) {
+@media screen and (min-width: 767.98px) {
     .tabs_services-triggers_trigger {
         -webkit-box-flex: 1;
         -ms-flex-positive: 1;
         flex-grow: 1;
-        font-size: 24px
+        font-size: 24px;
     }
 
     .tabs_services-content {
@@ -8591,24 +8743,25 @@ form .contact_form-form span.your-message textarea {
         -ms-flex-positive: 1;
         flex-grow: 1;
         border: 1px solid #c8c8c8;
-        border-left: none
+        border-left: none;
     }
 
     .tabs_services-content .content .text-wrapper .main {
         margin-top: 0;
-        margin-bottom: 0
+        margin-bottom: 0;
     }
 
-    .tabs_services-content .content .text-wrapper .main_btn,.tabs_services-content .content .text-wrapper .main_table {
-        width: 100%
+    .tabs_services-content .content .text-wrapper .main_btn,
+    .tabs_services-content .content .text-wrapper .main_table {
+        width: 100%;
     }
 
     .tabs_services-content .content .text-wrapper .main_btn {
-        margin: 20px 0
+        margin: 20px 0;
     }
 
     .tabs_services-content .content .text-wrapper .main_table .value {
-        text-align: right
+        text-align: right;
     }
 
     .tabs_services-content .content.active {
@@ -8622,11 +8775,11 @@ form .contact_form-form span.your-message textarea {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
         -ms-flex-direction: column;
-        flex-direction: column
+        flex-direction: column;
     }
 
     .tabs_services-content .content.active .text-wrapper {
-        border-left: none
+        border-left: none;
     }
 }
 
@@ -8634,17 +8787,17 @@ form .contact_form-form span.your-message textarea {
     margin-bottom: 40px;
 }
 
-@media screen and (min-width:991.98px) {
+@media screen and (min-width: 991.98px) {
     .tabs_header-wrapper {
         width: 50%;
         -webkit-box-flex: 1;
         -ms-flex-positive: 1;
-        flex-grow: 1
+        flex-grow: 1;
     }
 
     .tabs_header .text {
         margin: 0;
-        width: 35%
+        width: 35%;
     }
 
     .tabs_services-triggers {
@@ -8653,124 +8806,125 @@ form .contact_form-form span.your-message textarea {
         -webkit-box-pack: justify;
         -ms-flex-pack: justify;
         justify-content: space-between;
-        height: inherit
+        height: inherit;
     }
 
     .tabs_services-content {
-        width: 600px
+        width: 600px;
     }
 
     .tabs_services-content .content .text-wrapper {
-        padding: 30px
+        padding: 30px;
     }
 
     .tabs_services-content .content .text-wrapper .main {
         margin-top: 0;
-        margin-bottom: 30px
+        margin-bottom: 30px;
     }
 
-    .tabs_services-content .content .text-wrapper .main_btn,.tabs_services-content .content .text-wrapper .main_table {
-        width: unset
+    .tabs_services-content .content .text-wrapper .main_btn,
+    .tabs_services-content .content .text-wrapper .main_table {
+        width: unset;
     }
 
     .tabs_services-content .content .text-wrapper .main_btn {
         margin: 0 0 0 15px;
-        max-width: 184px
+        max-width: 184px;
     }
 
     .tabs_services-content .content .text-wrapper .main_table .value {
-        text-align: left
+        text-align: left;
     }
 }
 
-@media screen and (min-width:1199.98px) {
+@media screen and (min-width: 1199.98px) {
     .tabs_header-wrapper {
         max-width: 493px;
         -webkit-box-flex: unset;
         -ms-flex-positive: unset;
-        flex-grow: unset
+        flex-grow: unset;
     }
 
     .tabs_header .text {
         max-width: 525px;
-        width: 100%
+        width: 100%;
     }
 
     .tabs_services-triggers {
-        max-width: 521px
+        max-width: 521px;
     }
 
     .tabs_services-triggers_trigger {
         font-size: 20px;
         padding: 30px 60px 30px 50px;
         border-right: none;
-        border-left: none;    
+        border-left: none;
     }
 }
 
 .process_header {
-    max-width: 376px
+    max-width: 376px;
 }
 
 .process_text {
     max-width: 520px;
     margin: 30px 0 40px;
-    color: #e9e6e6
+    color: #e9e6e6;
 }
 
 .process_steps {
-    padding-right: 15px
+    padding-right: 15px;
 }
 
 .process_steps-step {
-    position: relative
+    position: relative;
 }
 
 .process_steps-step_wrapper {
     margin-left: 20px;
-    padding-left: 20px
+    padding-left: 20px;
 }
 
 .process_steps-step:last-of-type {
-    margin-bottom: 0
+    margin-bottom: 0;
 }
 
 .process_steps-step .title {
-    margin-bottom: 10px
+    margin-bottom: 10px;
 }
 
 .process_steps-step .description {
-    padding-bottom: 30px
+    padding-bottom: 30px;
 }
 
-@media screen and (min-width:991.98px) {
+@media screen and (min-width: 991.98px) {
     .process_text {
-        margin: 0
+        margin: 0;
     }
 
     .process_fluid {
-        position: relative
+        position: relative;
     }
 
     .process_fluid:before {
-        content: '';
+        content: "";
         width: 100%;
         height: 1px;
         position: absolute;
         left: 0;
         top: 10px;
-        background: #a9a9a9
+        background: #a9a9a9;
     }
 
     .process_steps {
         padding-right: 0;
-        margin-top: 60px
+        margin-top: 60px;
     }
 
     .process_steps-step {
         -webkit-box-flex: unset;
         -ms-flex: unset;
-        flex: unset
+        flex: unset;
     }
 
     .process_steps-step_wrapper {
@@ -8778,15 +8932,15 @@ form .contact_form-form span.your-message textarea {
         padding-left: 10px;
         margin-top: 60px;
         max-width: 298px;
-        margin-right: 32px
+        margin-right: 32px;
     }
 
     .process_steps-step:last-of-type {
-        margin-bottom: 0
+        margin-bottom: 0;
     }
 
     .process_steps-step .description {
-        padding-bottom: 0
+        padding-bottom: 0;
     }
 }
 

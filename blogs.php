@@ -6,19 +6,25 @@
 
 <main class="post section-nopb">
     <div class="container d-flex flex-wrap justify-content-center justify-content-md-between">
-        <div class="wrapper--content">
+        <div class="wrapper--content col-12">
 
-            <?php 
+            <?php
+                $max_post = get_option( "posts_per_page");
+                if (!empty($max_post)) {
+                    $max_post = 4;
+                }
+
                 $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
                 $args = array(
-                    'posts_per_page' => 1,
+                    'posts_per_page' => $max_post,
                     'post_type'   => 'post',
                     'post_status' => 'publish',
                     'paged' => $paged
                 );
-                
+
                 $the_query = new WP_Query( $args );
+
             ?>
 
             <?php if( $the_query->have_posts() ): ?>

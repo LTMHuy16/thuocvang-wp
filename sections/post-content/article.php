@@ -34,6 +34,10 @@
 
         </span>
     </div>
+    
+
+    <?php the_content(); ?>
+
 
     <?php if (have_rows('post_flexible_content')): ?>
 

@@ -36,7 +36,7 @@
         <div class="container d-flex flex-wrap justify-content-center justify-content-md-between">
 
             <!-- POST CONTENT -->
-            <div class="wrapper--content">
+            <div class="wrapper--content col-12">
 
                 <?php include(get_theme_file_path('sections/post-content/article.php')); ?>
 

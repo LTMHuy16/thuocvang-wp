@@ -90,12 +90,17 @@
                         <div class="wrapper d-flex flex-column justify-content-between">
                             <i class="icon-call icon"></i>
                             <h4 class="title">Phone</h4>
+
                             <div class="content d-flex flex-column">
                                 <?php foreach ($phone_list as $item): ?>
+
                                         <?php $phone = $item['phone'] ?>
+
                                         <a class="link" href="tel:+<?php echo esc_attr($phone) ?>"><?php echo esc_html($phone) ?></a>
+
                                 <?php endforeach; ?>
                             </div>
+
                         </div>
                     </div>
                 <?php endif; ?>	
