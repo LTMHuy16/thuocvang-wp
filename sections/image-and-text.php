@@ -13,6 +13,8 @@
             $image_bg = $single['image'];
             $image_alignment = $single['image_alignment'];
             $custom_class = $single['custom_class'];
+
+            $image_bg['alt'] == "" ? $image_bg["alt"] = "ThuocVang" : ""; 
         ?>
         <section class="hero section <?php if(!empty($custom_class)) {echo esc_attr($custom_class);} ?>">
             <div class="container d-flex flex-wrap flex-xl-nowrap align-items-xl-center justify-content-between <?php if(!empty($image_alignment)) {echo esc_attr($image_alignment);} ?>">
@@ -53,6 +55,7 @@
                                 $text = $item['text_content'];
                                 $is_new_icon = $item['new_icon'];
                                 $icon = $item['icon'];
+                                $icon['alt'] == "" ? $icon["alt"] = "ThuocVang" : ""; 
                                 if (!empty($text)):
                             ?>  
                                     <li class="hero_header-list_item d-flex align-items-center">
@@ -61,7 +64,7 @@
                                         <?php else: ?>
                                             <div class="hero_header-icon">
                                                 <picture>
-                                                    <img src="<?php echo esc_url($icon['url']) ?>" alt="<?php echo esc_url($icon['alt']) ?>">
+                                                    <img src="<?php echo esc_url($icon['url']) ?>" alt="<?php echo esc_attr($icon['alt']) ?>">
                                                 </picture>
                                             </div>
                                         <?php endif ?>

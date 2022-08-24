@@ -2,6 +2,7 @@
     $subtitle = get_sub_field('subtitle');
     $title = get_sub_field('name_of_page');
     $image = get_sub_field('image');
+    $image['alt'] == "" ? $image["alt"] = "ThuocVang" : ""; 
 ?>
 
 <div class="header_extension">
@@ -32,7 +33,7 @@
         </div>
     </div>
 
-    <?php if(!empty($title)): ?>
+    <?php if(!empty($image)): ?>
 
         <picture>
             <img class="lazy plan entered loaded" src="<?php echo esc_url($image['url']) ?>" alt="<?php echo esc_attr($image['alt']) ?>" />

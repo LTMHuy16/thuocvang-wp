@@ -14,6 +14,10 @@
 
     <?php if(!empty($bg_image_left)): ?>
 
+        <?php 
+            $bg_image_left['alt'] == "" ? $bg_image_left["alt"] = "ThuocVang" : ""; 
+        ?>
+
         <picture>
             <img class="plan lazy entered loaded"
                 src="<?php echo esc_url($bg_image_left['url']); ?>" alt="<?php echo esc_attr($bg_image_left['alt']); ?>" data-role="deco" data-ll-status="loaded" />
@@ -24,6 +28,10 @@
     <div class="container hero_container d-md-flex flex-wrap justify-content-between">
 
         <?php if(!empty($bg_image_right)): ?>
+
+            <?php 
+                $bg_image_right['alt'] == "" ? $bg_image_right["alt"] = "ThuocVang" : ""; 
+            ?>
 
             <picture>
                 <img class="hero_building lazy entered loaded" src="<?php echo esc_url($bg_image_right['url']); ?>" alt="<?php echo esc_attr($bg_image_right['alt']); ?>" data-role="deco" data-ll-status="loaded" />
@@ -122,6 +130,10 @@
 
                     <!-- BG RIGHT -->
                     <?php if(!empty($bg_image_right)): ?>
+
+                        <?php 
+                            $bg_image_right['alt'] == "" ? $bg_image_right["alt"] = "ThuocVang" : ""; 
+                        ?>
 
                         <picture>
                             <img class="hero_building--mini lazy entered loaded" src="<?php echo esc_url($bg_image_right['url']); ?>" alt="<?php echo esc_attr($bg_image_right['alt']); ?>" data-role="deco" data-ll-status="loaded" />

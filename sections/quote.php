@@ -6,6 +6,8 @@
     $custom_class = get_sub_field('custom_class');
     $image_decoration = get_sub_field('image_decoration');
     $animation = get_sub_field('animation');
+
+    $image_decoration['alt'] == "" ? $image_decoration["alt"] = "ThuocVang" : ""; 
 ?>
 <section class="quote section <?php if(!empty($bg_color)) {echo esc_attr($bg_color);} ?> <?php if(!empty($custom_class)) {echo esc_attr($custom_class);} ?>">
     <div class="container">

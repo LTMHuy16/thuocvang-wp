@@ -33,6 +33,7 @@
 
                     <?php 
                         $image = $header_logo['image'];
+                        $image['alt'] == "" ? $image["alt"] = "ThuocVang" : ""; 
                         $normal_text = $header_logo['normal_text'];
                         $highlighted_text = $header_logo['highlighted_text'];
                     ?>
@@ -43,7 +44,7 @@
                         <?php if(!empty($image)): ?>
 
                             <picture>
-                                <img src="<?php echo esc_url($image['url']) ?>" alt="<?php echo esc_url($image['alt']) ?>">
+                                <img src="<?php echo esc_url($image['url']) ?>" alt="<?php echo esc_attr($image['alt']); ?>">
                             </picture>
 
                         <?php endif; ?>

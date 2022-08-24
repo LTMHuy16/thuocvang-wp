@@ -4,7 +4,8 @@
     $custom_class = get_sub_field('custom_class');
     $section_image = get_sub_field('section_image');
     $section_content = get_sub_field('section_content');
-    $section_content = get_sub_field('section_content');
+
+    $section_image['alt'] == "" ? $section_image["alt"] = "ThuocVang" : ""; 
 ?>
 <section class="spots section <?php if(!empty($custom_class)) {echo esc_attr($custom_class);} ?>">
     <div class="container d-flex flex-wrap flex-lg-nowrap">

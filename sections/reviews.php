@@ -4,6 +4,7 @@
     $custom_class = get_sub_field('custom_class');
     $review_list = get_sub_field('review_list');
 ?>
+
 <section class="reviews section <?php if(!empty($custom_class)) {echo esc_attr($custom_class);} ?>">
     <div class="container">
         <div class="reviews_header section_header">
@@ -40,6 +41,8 @@
                             $client_name = $item['client_name'];
                             $client_job = $item['client_job'];
                             $client_portraits = $item['client_portraits'];
+
+                            $client_portraits['alt'] == "" ? $client_portraits["alt"] = "ThuocVang" : ""; 
                         ?>
                         <div class="reviews_slider-slide_wrapper d-flex flex-column justify-content-between align-items-start">
                             <?php if(!empty($star_number)): ?>

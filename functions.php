@@ -31,8 +31,6 @@ function qdn_styles() {
     wp_dequeue_style( 'wc-block-style' ); 
 	
 	wp_enqueue_style( 'owl-carousel', get_stylesheet_directory_uri() . '/assets/css/owl.carousel.min.css' );
-
-	// wp_enqueue_style( 'single', get_stylesheet_directory_uri() . '/assets/css/single-service.css' );
 	wp_enqueue_style( 'baguette-box', get_stylesheet_directory_uri() . '/assets/css/baguetteBox.min.css' );
 	wp_enqueue_style( 'base', get_stylesheet_directory_uri() . '/assets/css/main.css' );
 }

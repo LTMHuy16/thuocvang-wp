@@ -11,10 +11,13 @@
 <div class="section">
     <div class="container">
         <div class="info_data row g-0">
+            
             <div class="info_data-card section_header col-md-6 col-xxl-3">
+
                 <?php if(!empty($subtitle)): ?>
                     <span class="subtitle"><?php echo esc_html($subtitle); ?></span>
                 <?php endif; ?>
+
                 <?php 
                     if($title) {
                         $normal_title = $title['normal_title'];
@@ -22,17 +25,23 @@
                         $normal_title_after = $title['normal_title_after'];
                     }
                 ?>
+
                 <h2 class="title">
+
                     <?php if(!empty($normal_title)): ?>
                         <?php echo esc_html($normal_title); ?>
                     <?php endif; ?>
+
                     <?php if(!empty($highlighted_title)): ?>
                         <span class="highlight"><?php echo esc_html($highlighted_title); ?></span>
                     <?php endif; ?>
+
                     <?php if(!empty($normal_title_after)): ?>
                         <?php echo esc_html($normal_title_after); ?>
                     <?php endif; ?>
+                    
                 </h2>
+
             </div>
 
             <?php if(!empty($contact_info)): ?>

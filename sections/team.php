@@ -4,6 +4,7 @@
     $custom_class = get_sub_field('custom_class');
     $button = get_sub_field('button');
     $video_bakground = get_sub_field('video_bakground');
+    $video_bakground['alt'] == "" ? $video_bakground["alt"] = "ThuocVang" : ""; 
     $video_setting = get_sub_field('video_setting');
     $description = get_sub_field('description');
     $main_list_text = get_sub_field('main_list_text');
@@ -102,6 +103,7 @@
                         <?php 
                             $quote_content = $item['quote_content'];
                             $member_portrait = $item['member_portrait'];
+                            $member_portrait['alt'] == "" ? $member_portrait["alt"] = "ThuocVang" : ""; 
                             $member_name = $item['member_name'];
                             $member_position = $item['member_position'];
                         ?>

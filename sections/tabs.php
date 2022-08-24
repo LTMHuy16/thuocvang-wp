@@ -61,6 +61,7 @@
                     <?php foreach($tabs_list as $item): ?>
                         <?php
                             $tab_img = $item['image'];
+                            $tab_img['alt'] == "" ? $tab_img["alt"] = "ThuocVang" : ""; 
                             $tab_duration = $item['duration'];
                             $tab_price = $item['price'];
                             $tab_button = $item['button'];

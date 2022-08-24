@@ -4919,13 +4919,17 @@ input[type="checkbox"] + label .icon {
         bottom: -73%;
     }
 }
-.header .brand {
-    max-width: 300px;
+.header .brand {    
+    max-width: 240px;
+}
+
+.header .brand img {    
+    height: 40px;
 }
 @media screen and (min-width: 991.98px) {
-    .header .brand {
-        font-size: 0;
-    }
+    /* .header .brand {
+        max-width: 240px;
+    } */
     .header_navbar {
         padding: 60px 0 30px;
         box-shadow: none;
@@ -5179,9 +5183,9 @@ input[type="checkbox"] + label .icon {
 .hero_building {
     position: absolute;
     right: -50%;
-    bottom: -15%;
+    bottom: 0;
     max-height: 50%;
-    max-width: 60%;
+    max-width: 100%;
     -webkit-animation-name: slideUp;
     animation-name: slideUp;
     -webkit-animation-duration: 3s;
@@ -5189,6 +5193,18 @@ input[type="checkbox"] + label .icon {
     -webkit-animation-timing-function: ease-in-out;
     animation-timing-function: ease-in-out;
 }
+@media screen and (min-width: 768px) {
+    .hero_building {
+        max-width: 80%;
+    }    
+}
+@media screen and (min-width: 992px) {
+    .hero_building {
+        max-width: 60%;
+    }    
+}
+
+
 .hero_info {
     color: #000810;
     position: relative;
@@ -6357,12 +6373,36 @@ input[type="checkbox"] + label .icon {
 .footer_main-block {
     margin-bottom: 40px;
 }
+.footer_main-block .brand {
+    max-width: 250px;
+}
+@media screen and (max-width: 576px) {
+    .footer_main-block .brand {
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .footer_main-block .footer__contacts {
+        padding-left: 50px;
+    }
+}
 .footer_main-block:last-of-type {
     margin-bottom: 0;
 }
 .footer_main-block .brand,
 .footer_main-block_title {
     margin-bottom: 20px;
+}
+@media screen and (max-width: 576px) {
+    .footer_main-block_title {
+        text-align: center;
+    }
+    .footer_main-block_subtitle--brand,
+    .footer_main-block_subtitle--newsletter,
+    .footer__contact .list-item {
+        text-align: center;
+    }
 }
 .footer_main-block_form {
     position: relative;
@@ -6878,9 +6918,13 @@ form .contact_form-form span.your-message textarea {
 .services_slider-slide .text-wrapper .title {
     margin-bottom: 20px;
 }
+.services_slider-slide .btn {
+    margin-top: 40px;
+}
 @media (max-width: 991.98px) {
     .services_slider-slide .btn {
-        margin-top: 20px;
+        margin-top: 30px;
+        width: 100%;
     }
 }
 
@@ -7978,12 +8022,13 @@ form .contact_form-form span.your-message textarea {
     }
 }
 
+/*  */
 .progress-tracker {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     padding: 0;
-    list-style: none;
+    list-style: none
 }
 
 .progress-step {
@@ -7992,22 +8037,24 @@ form .contact_form-form span.your-message textarea {
     flex: 1 1 0%;
     margin: 0;
     padding: 0;
-    min-width: 24px;
 }
 
 .progress-step:last-child {
     -webkit-box-flex: 0;
     -ms-flex-positive: 0;
-    flex-grow: 0;
+    flex-grow: 0
 }
 
 .progress-step:last-child .progress-marker::after {
-    display: none;
+    display: none
 }
 
-.progress-marker {
-    display: block;
-    position: relative;
+@media screen and (max-width: 1200px) {
+    .progress-marker {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .progress-marker_spot {
@@ -8019,7 +8066,7 @@ form .contact_form-form span.your-message textarea {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 3;
+    z-index: 3
 }
 
 .progress-marker_spot--underlay {
@@ -8027,21 +8074,21 @@ form .contact_form-form span.your-message textarea {
     width: 0;
     height: 0;
     border-radius: 50%;
-    background-color: rgba(255, 198, 49, 0.3);
+    background-color: rgba(255,198,49,.3);
     top: -10px;
     left: -10px;
     z-index: 2;
-    transition: ease-in-out;
+    transition: ease-in-out
 }
 
 .progress-step.is-complete .progress-marker_spot--underlay {
     animation: 4.5s infinite pulse;
     width: 40px;
-    height: 40px;
+    height: 40px
 }
 
 .progress-marker::after {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     z-index: 1;
@@ -8049,276 +8096,212 @@ form .contact_form-form span.your-message textarea {
     right: -10px;
     width: 100%;
     height: 1px;
-    -webkit-transition: background-color 0.6s, background-position 0.6s;
-    transition: background-color 0.6s, background-position 0.6s;
+    -webkit-transition: background-color .6s,background-position .6s;
+    transition: background-color .6s,background-position .6s
+}
+
+@media screen and (min-width: 1200px) {
+    .progress-marker::after {
+        display: flex;
+        flex: 1 1 auto
+    }    
 }
 
 .progress-step .progress-marker {
-    color: #a9a9a9;
+    color: #a9a9a9
 }
 
-.progress-step .progress-marker::after,
-.progress-step .progress-marker::before {
-    background-color: #b6b6b6;
+.progress-step .progress-marker::after,.progress-step .progress-marker::before {
+    background-color: #b6b6b6
 }
 
 .progress-step .progress-text {
-    color: #333;
+    color: #333
 }
 
-.progress-step.is-active .progress-marker::before,
-.progress-step.is-complete .progress-marker::after,
-.progress-step.is-complete .progress-marker::before,
-.progress-step.is-progress .progress-marker::after,
-.progress-step.is-progress .progress-marker::before {
-    background-color: #ffc631;
+.progress-step.is-active .progress-marker::before,.progress-step.is-complete .progress-marker::after,.progress-step.is-complete .progress-marker::before,.progress-step.is-progress .progress-marker::after,.progress-step.is-progress .progress-marker::before {
+    background-color: #ffc631
 }
 
 .progress-step.is-progress-10 .progress-marker::after {
-    background-image: -webkit-gradient(
-        linear,
-        left top,
-        right top,
-        color-stop(10%, #868686),
-        color-stop(10%, #b6b6b6)
-    );
-    background-image: linear-gradient(to right, #868686 10%, #b6b6b6 10%);
+    background-image: -webkit-gradient(linear,left top,right top,color-stop(10%,#868686),color-stop(10%,#b6b6b6));
+    background-image: linear-gradient(to right,#868686 10%,#b6b6b6 10%)
 }
 
 .progress-step.is-progress-20 .progress-marker::after {
-    background-image: -webkit-gradient(
-        linear,
-        left top,
-        right top,
-        color-stop(20%, #868686),
-        color-stop(20%, #b6b6b6)
-    );
-    background-image: linear-gradient(to right, #868686 20%, #b6b6b6 20%);
+    background-image: -webkit-gradient(linear,left top,right top,color-stop(20%,#868686),color-stop(20%,#b6b6b6));
+    background-image: linear-gradient(to right,#868686 20%,#b6b6b6 20%)
 }
 
 .progress-step.is-progress-30 .progress-marker::after {
-    background-image: -webkit-gradient(
-        linear,
-        left top,
-        right top,
-        color-stop(30%, #868686),
-        color-stop(30%, #b6b6b6)
-    );
-    background-image: linear-gradient(to right, #868686 30%, #b6b6b6 30%);
+    background-image: -webkit-gradient(linear,left top,right top,color-stop(30%,#868686),color-stop(30%,#b6b6b6));
+    background-image: linear-gradient(to right,#868686 30%,#b6b6b6 30%)
 }
 
 .progress-step.is-progress-40 .progress-marker::after {
-    background-image: -webkit-gradient(
-        linear,
-        left top,
-        right top,
-        color-stop(40%, #868686),
-        color-stop(40%, #b6b6b6)
-    );
-    background-image: linear-gradient(to right, #868686 40%, #b6b6b6 40%);
+    background-image: -webkit-gradient(linear,left top,right top,color-stop(40%,#868686),color-stop(40%,#b6b6b6));
+    background-image: linear-gradient(to right,#868686 40%,#b6b6b6 40%)
 }
 
 .progress-step.is-progress-50 .progress-marker::after {
-    background-image: -webkit-gradient(
-        linear,
-        left top,
-        right top,
-        color-stop(50%, #868686),
-        color-stop(50%, #b6b6b6)
-    );
-    background-image: linear-gradient(to right, #868686 50%, #b6b6b6 50%);
+    background-image: -webkit-gradient(linear,left top,right top,color-stop(50%,#868686),color-stop(50%,#b6b6b6));
+    background-image: linear-gradient(to right,#868686 50%,#b6b6b6 50%)
 }
 
 .progress-step.is-progress-60 .progress-marker::after {
-    background-image: -webkit-gradient(
-        linear,
-        left top,
-        right top,
-        color-stop(60%, #868686),
-        color-stop(60%, #b6b6b6)
-    );
-    background-image: linear-gradient(to right, #868686 60%, #b6b6b6 60%);
+    background-image: -webkit-gradient(linear,left top,right top,color-stop(60%,#868686),color-stop(60%,#b6b6b6));
+    background-image: linear-gradient(to right,#868686 60%,#b6b6b6 60%)
 }
 
 .progress-step.is-progress-70 .progress-marker::after {
-    background-image: -webkit-gradient(
-        linear,
-        left top,
-        right top,
-        color-stop(70%, #868686),
-        color-stop(70%, #b6b6b6)
-    );
-    background-image: linear-gradient(to right, #868686 70%, #b6b6b6 70%);
+    background-image: -webkit-gradient(linear,left top,right top,color-stop(70%,#868686),color-stop(70%,#b6b6b6));
+    background-image: linear-gradient(to right,#868686 70%,#b6b6b6 70%)
 }
 
 .progress-step.is-progress-80 .progress-marker::after {
-    background-image: -webkit-gradient(
-        linear,
-        left top,
-        right top,
-        color-stop(80%, #868686),
-        color-stop(80%, #b6b6b6)
-    );
-    background-image: linear-gradient(to right, #868686 80%, #b6b6b6 80%);
+    background-image: -webkit-gradient(linear,left top,right top,color-stop(80%,#868686),color-stop(80%,#b6b6b6));
+    background-image: linear-gradient(to right,#868686 80%,#b6b6b6 80%)
 }
 
 .progress-step.is-progress-90 .progress-marker::after {
-    background-image: -webkit-gradient(
-        linear,
-        left top,
-        right top,
-        color-stop(90%, #868686),
-        color-stop(90%, #b6b6b6)
-    );
-    background-image: linear-gradient(to right, #868686 90%, #b6b6b6 90%);
+    background-image: -webkit-gradient(linear,left top,right top,color-stop(90%,#868686),color-stop(90%,#b6b6b6));
+    background-image: linear-gradient(to right,#868686 90%,#b6b6b6 90%)
 }
 
 .progress-step:hover .progress-marker::before {
-    background-color: #56adf5;
+    background-color: #56adf5
 }
 
-.progress-tracker--center .progress-step:last-child,
-.progress-tracker--right .progress-step:last-child,
-.progress-tracker--text .progress-step:last-child {
+.progress-tracker--center .progress-step:last-child,.progress-tracker--right .progress-step:last-child,.progress-tracker--text .progress-step:last-child {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
-    flex-grow: 1;
+    flex-grow: 1
 }
 
 .progress-tracker--center {
-    text-align: center;
+    text-align: center
 }
 
-.progress-tracker--center .progress-marker::before,
-.progress-tracker--center .progress-text--dotted::before {
+.progress-tracker--center .progress-marker::before,.progress-tracker--center .progress-text--dotted::before {
     margin-left: auto;
-    margin-right: auto;
+    margin-right: auto
 }
 
 .progress-tracker--center .progress-marker::after {
-    right: -50%;
+    right: -50%
 }
 
 .progress-tracker--right {
-    text-align: right;
+    text-align: right
 }
 
-.progress-tracker--right .progress-marker::before,
-.progress-tracker--right .progress-text--dotted::before {
-    margin-left: auto;
+.progress-tracker--right .progress-marker::before,.progress-tracker--right .progress-text--dotted::before {
+    margin-left: auto
 }
 
 .progress-tracker--right .progress-marker::after {
-    right: calc(-100% + 12px);
+    right: calc(-100% + 12px)
 }
 
 .progress-tracker--spaced .progress-marker::after {
     width: calc(100% - 40px);
     margin-left: 20px;
-    margin-right: 20px;
+    margin-right: 20px
 }
 
 .progress-tracker--border {
     padding: 4px;
     border: 2px solid #333;
-    border-radius: 32px;
+    border-radius: 32px
 }
 
 .progress-text--dotted::before {
-    content: "";
+    content: '';
     display: block;
     width: 12px;
     height: 12px;
     margin: 6px -2px;
     background-size: 12px 18px;
-    background-image: repeating-radial-gradient(
-        circle at center 6px,
-        #b6b6b6,
-        #b6b6b6 5px,
-        rgba(182, 182, 182, 0.5) 5.5px,
-        rgba(182, 182, 182, 0.01) 6px,
-        transparent 100%
-    );
+    background-image: repeating-radial-gradient(circle at center 6px,#b6b6b6,#b6b6b6 5px,rgba(182,182,182,.5) 5.5px,rgba(182,182,182,.01) 6px,transparent 100%)
 }
 
 .progress-text--dotted-1::before {
-    height: 12px;
+    height: 12px
 }
 
 .progress-text--dotted-2::before {
-    height: 30px;
+    height: 30px
 }
 
 .progress-text--dotted-3::before {
-    height: 48px;
+    height: 48px
 }
 
 .progress-text--dotted-4::before {
-    height: 66px;
+    height: 66px
 }
 
 .progress-text--dotted-5::before {
-    height: 84px;
+    height: 84px
 }
 
 .progress-text--dotted-6::before {
-    height: 102px;
+    height: 102px
 }
 
 .progress-text--dotted-7::before {
-    height: 120px;
+    height: 120px
 }
 
 .progress-text--dotted-8::before {
-    height: 138px;
+    height: 138px
 }
 
 .progress-text--dotted-9::before {
-    height: 156px;
+    height: 156px
 }
 
 .progress-text--dotted-10::before {
-    height: 174px;
+    height: 174px
 }
 
 .progress-text--dotted-11::before {
-    height: 192px;
+    height: 192px
 }
 
 .progress-text--dotted-12::before {
-    height: 210px;
+    height: 210px
 }
 
 .progress-tracker--text-top .progress-text {
-    height: 100%;
+    height: 100%
 }
 
 .progress-tracker--text-top .progress-marker {
-    top: -24px;
+    top: -24px
 }
 
 .progress-tracker--text-inline {
-    overflow: hidden;
+    overflow: hidden
 }
 
-.progress-tracker--text-inline .progress-marker,
-.progress-tracker--text-inline .progress-step {
+.progress-tracker--text-inline .progress-marker,.progress-tracker--text-inline .progress-step {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
     -ms-flex-align: center;
-    align-items: center;
+    align-items: center
 }
 
 .progress-tracker--text-inline .progress-marker {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
-    flex-grow: 1;
+    flex-grow: 1
 }
 
 .progress-tracker--text-inline .progress-marker::after {
-    top: auto;
+    top: auto
 }
 
 .progress-tracker--text-inline .progress-text {
@@ -8328,36 +8311,36 @@ form .contact_form-form span.your-message textarea {
     white-space: nowrap;
     padding-top: 0;
     padding-bottom: 0;
-    background-color: #fff;
+    background-color: #fff
 }
 
 .progress-tracker--text-inline .progress-marker .progress-text {
-    display: inline-block;
+    display: inline-block
 }
 
 .progress-tracker--text-inline .progress-title {
-    margin: 0;
+    margin: 0
 }
 
 .progress-tracker--square .progress-marker::before {
-    border-radius: 0;
+    border-radius: 0
 }
 
 .progress-tracker--square .progress-marker::after {
     top: auto;
-    bottom: 0;
+    bottom: 0
 }
 
-@media (max-width: 575px) {
+@media (max-width:575px) {
     .progress-tracker-wrapper {
         overflow-x: auto;
         -ms-scroll-snap-type: x proximity;
-        scroll-snap-type: x proximity;
+        scroll-snap-type: x proximity
     }
 
     .progress-tracker-wrapper .progress-step {
         min-width: 50%;
-        scroll-snap-align: start;
+        scroll-snap-align: start
     }
 }
 
@@ -8365,23 +8348,14 @@ form .contact_form-form span.your-message textarea {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
-    flex-direction: column;
-}
-
-.progress-tracker--vertical .progress-step {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-flex: 1;
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
+    flex-direction: column
 }
 
 .progress-tracker--vertical.progress-tracker--right .progress-step {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
     -ms-flex-direction: row-reverse;
-    flex-direction: row-reverse;
+    flex-direction: row-reverse
 }
 
 .progress-tracker--vertical .progress-marker::after {
@@ -8389,11 +8363,19 @@ form .contact_form-form span.your-message textarea {
     top: 0;
     left: 10px;
     width: 1px;
-    height: 100%;
+    height: 100%
+}
+
+@media screen and (min-width: 1200px) {
+    .progress-tracker--vertical .progress-marker::after {
+        top: 10px;
+        width: 100%;
+        height: 1px;
+    }    
 }
 
 .progress-tracker--vertical .progress-text {
-    padding: 0 12px 24px;
+    padding: 0 12px 24px
 }
 
 @-webkit-keyframes scale-up {
@@ -8873,6 +8855,7 @@ form .contact_form-form span.your-message textarea {
 }
 
 .process_steps {
+    margin-top: 30px    ;
     padding-right: 15px;
 }
 
@@ -8881,8 +8864,14 @@ form .contact_form-form span.your-message textarea {
 }
 
 .process_steps-step_wrapper {
-    margin-left: 20px;
-    padding-left: 20px;
+    padding-left: 40px;
+    margin-top: 30px;
+}
+
+@media screen and (min-width: 1200px) {
+    .process_steps-step_wrapper {
+        margin-top: 50px;
+    } 
 }
 
 .process_steps-step:last-of-type {
@@ -8897,7 +8886,7 @@ form .contact_form-form span.your-message textarea {
     padding-bottom: 30px;
 }
 
-@media screen and (min-width: 991.98px) {
+@media screen and (min-width: 1199.98px) {
     .process_text {
         margin: 0;
     }

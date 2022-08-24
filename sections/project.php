@@ -42,6 +42,8 @@
                             $button_text = $box['button_text'];
                             $link_card = $box['link_card'];
                             $card_custom_class = $box['custom_class'];
+
+                            $image['alt'] == "" ? $image["alt"] = "ThuocVang" : ""; 
                         }
                     ?>
                     <li class="projects_list-item col-12 col-md-6">

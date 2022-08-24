@@ -4,6 +4,7 @@
     $custom_class = get_sub_field('custom_class');
     $button = get_sub_field('button');
 ?>
+
 <section class="blog section <?php if(!empty($custom_class)) {echo esc_attr($custom_class);} ?>">
     <div class="container">
         <div class="wrapper d-flex flex-wrap align-items-end justify-content-sm-between">

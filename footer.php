@@ -12,14 +12,15 @@
         <div class="footer_main d-flex flex-wrap justify-content-md-between col-12">
 
 			<!-- LOGO CONTTENT -->
-            <div class="footer_main-block col-sm-6 col-xl-3">
+            <div class="footer_main-block col-sm-6 col-xl-2">
                 <div>
-                    <div class="textwidget custom-html-widget">
+                    <div class="textwidget custom-html-widget d-flex flex-column">
 
 						<?php if(!empty($footer_logo_content)): ?>
 
 							<?php 
 								$image = $footer_logo_content['image'];
+								$image['alt'] == "" ? $image["alt"] = "ThuocVang" : ""; 
 								$normal_text = $footer_logo_content['normal_text'];
 								$highlighted_text = $footer_logo_content['hightlighted_text'];
 								$link = $footer_logo_content['link'];
@@ -28,13 +29,13 @@
 
 							<?php if(!empty($link)): ?>
 								
-								<a class="brand d-inline-flex align-items-center justify-content-center"
+								<a class="brand d-inline-flex align-items-center justify-content-center justify-content-sm-start"
 									href="<?php echo esc_url($link); ?>">
 
-									<?php if(!empty($link)): ?>
+									<?php if(!empty($image)): ?>
 
 										<picture>
-											<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_url($image['alt']); ?>">
+											<img src="<?php echo esc_attr($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
 										</picture>
 
 									<?php endif; ?>
@@ -66,12 +67,12 @@
 				?>
 
 				<div class="footer_main-block col-12 col-sm-6 col-xl-3">
-					<div>
+					<div class="footer__contacts">
 						<div class="textwidget custom-html-widget">
 							<h4 class="footer_main-block_title">Contacts</h4>
 
 							<?php if(!empty($phone_list)): ?>
-								<div class="group-wrapper d-flex">
+								<div class="group-wrapper d-flex justify-content-center justify-content-sm-start">
 									<i class="icon-call icon"></i>
 									<div class="group d-flex flex-column">
 
@@ -88,7 +89,7 @@
 							<?php endif; ?>
 
 							<?php if(!empty($address)): ?>
-								<div class="group-wrapper d-flex">
+								<div class="group-wrapper d-flex justify-content-center justify-content-sm-start">
 									<i class="icon-location icon"></i>
 									<div class="group">
 										<span><?php echo esc_html($address) ?></span>
@@ -102,7 +103,7 @@
 
 			<!-- LINKS -->
 			<?php if(!empty($footer_company)): ?>
-				<div class="footer_main-block col-12 col-sm-6 col-xl-3">
+				<div class="footer_main-block footer__contact col-12 col-sm-6 col-xl-2">
 					<div>
 						<div class="textwidget custom-html-widget">
 							<h4 class="footer_main-block_title">Company</h4>
