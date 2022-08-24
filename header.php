@@ -68,7 +68,7 @@
                             wp_nav_menu( array(
                                 'theme_location' => 'primary',
                                 'container' => '',
-                                'menu_class' => 'header_navbar-nav_list',
+                                'menu_class' => 'container header_navbar-nav_list',
                                 'item_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
                                 'add_li_class' => 'list-item'
                             ));

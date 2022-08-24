@@ -4754,6 +4754,7 @@ input[type="checkbox"] + label .icon {
     font-weight: 500;
 }
 .header_navbar {
+    position: relative;
     transition: 0.3s ease-in-out;
     padding: 10px 0;
     width: 100%;
@@ -4767,10 +4768,6 @@ input[type="checkbox"] + label .icon {
     left: 0;
 }
 
-.header_navbar-nav {
-    width: 100%;
-    order: 3;
-}
 .header_navbar-nav .link {
     display: inline-block;
     width: -webkit-fit-content;
@@ -4779,7 +4776,6 @@ input[type="checkbox"] + label .icon {
     line-height: 0.9;
 }
 .header_navbar-nav_list {
-    max-height: 0;
     margin-top: 0;
     transition: 0.3s;
 }
@@ -4791,12 +4787,20 @@ input[type="checkbox"] + label .icon {
     padding: 20px 0;
 }
 @media screen and (max-width: 991.98px) {
-    .header_navbar-nav_list.active {
-        max-height: 90vh;
-        margin-top: 30px;
-        overflow-y: hidden;
+    .header_navbar-nav {
+        position: absolute;
+        top: -100vh;
+        left: 0;
+        z-index: -1;
+        width: 100vw;
+        height: 90vh;
+        padding: 50px 20px;
+        background-color: #001f3f;
+        transition: top 0.6s ease;
     }
-
+    .header_navbar-nav.active {
+        top: 100%;
+    }
     .header_navbar-nav_list {
         overflow: hidden;
     }
@@ -4911,10 +4915,6 @@ input[type="checkbox"] + label .icon {
     .header_navbar {
         padding: 15px 0;
     }
-    .header_navbar-nav_list.active {
-        max-height: 1000px;
-        overflow: hidden;
-    }
     .header_extension .plan {
         bottom: -73%;
     }
@@ -4927,9 +4927,6 @@ input[type="checkbox"] + label .icon {
     height: 40px;
 }
 @media screen and (min-width: 991.98px) {
-    /* .header .brand {
-        max-width: 240px;
-    } */
     .header_navbar {
         padding: 60px 0 30px;
         box-shadow: none;
@@ -5534,7 +5531,7 @@ input[type="checkbox"] + label .icon {
     margin-top: 15px;
     padding-top: 15px;
 }
-.projects_list-item_info .separator {
+.text-wrapper .separator {
     position: absolute;
     width: 100%;
     height: 1px;
@@ -5542,28 +5539,18 @@ input[type="checkbox"] + label .icon {
     top: 0;
     left: 0;
 }
-.projects_list-item_info .location {
-    width: 100%;
-    margin-bottom: 15px;
+@media screen and (max-width: 1199.98px) {
+    .projects_list-item_info .location {
+        margin-bottom: 26px;
+    }
+}
+.projects_list-item_info .link-arrow {
+    text-align: right;
 }
 .projects_list-item_info .location .icon {
     color: #ffc631;
     font-size: 24px;
     margin-right: 10px;
-}
-.projects_list-item_info .link-arrow {
-    margin-left: auto;
-}
-@media screen and (min-width: 575.98px) {
-    .projects_list-item_info .location {
-        width: unset;
-        margin-right: 15px;
-        margin-bottom: 0;
-    }
-    .projects_list-item_info .link-arrow {
-        margin-left: auto;
-        margin-right: unset;
-    }
 }
 @media screen and (min-width: 767.98px) {
     .projects_list {
@@ -5571,10 +5558,6 @@ input[type="checkbox"] + label .icon {
     }
     .projects_list-item {
         padding: 0 15px;
-    }
-    .projects_list-item_info .link-arrow {
-        margin-left: auto;
-        margin-right: 0;
     }
 }
 @media screen and (min-width: 991.98px) {
@@ -5588,21 +5571,8 @@ input[type="checkbox"] + label .icon {
         padding: 0 20px;
         margin-top: 50px;
     }
-    .projects_list-item_info .location {
-        margin-bottom: 0;
-        width: 100%;
-    }
 }
 @media screen and (min-width: 1199.98px) {
-    .projects_list-item_info .location {
-        width: unset;
-        margin-right: 15px;
-        margin-bottom: 0;
-    }
-    .projects_list-item_info .link-arrow {
-        margin-left: auto;
-        margin-right: unset;
-    }
     .faq_accordion {
         flex-shrink: 1;
         max-width: 740px;
@@ -5716,8 +5686,12 @@ input[type="checkbox"] + label .icon {
     margin: 30px 0;
 }
 .spots_info-number {
-    text-align: center;
     margin-bottom: 20px;
+}
+@media screen and (max-width: 991.98px) {
+    .spots_info-number {
+        text-align: center;
+    }    
 }
 .spots_info-number:last-of-type {
     margin-bottom: 0;

@@ -17,7 +17,7 @@ const activeHeader = () => {
  */
 const showMenuInMobile = () => {
     jQuery(".hamburger").click(() => {
-        jQuery(".header_navbar-nav_list").toggleClass("active");
+        jQuery(".header_navbar-nav").toggleClass("active");
     });
 };
 
